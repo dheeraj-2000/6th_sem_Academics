@@ -39,3 +39,6 @@ plot(g, vertex.shapes(roa), vertex.lable = NA)
 #transitivity
 #Connectedness = diameter
 #Igraph
+g2 = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/thiers_2012.csv", format = "edgelist")
+V(g2)
+plot(g2)
