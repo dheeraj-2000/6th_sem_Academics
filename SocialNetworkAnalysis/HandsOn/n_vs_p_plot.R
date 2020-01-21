@@ -20,7 +20,7 @@ for(i in 1:100){
     }
   }
 }
-plot(number, probability,main="n vs p graph", type = "l", xlim=c(0,100), col="red")
+scatter.smooth(number, probability,main="n vs p graph", type = "l", xlim=c(0,100), col="red")
 
      legend("topright",
             c("n vs p "),
@@ -28,5 +28,5 @@ plot(number, probability,main="n vs p graph", type = "l", xlim=c(0,100), col="re
      )
 
 
-
+tkplot (g6, vertex.color = "green", edge.color = "red", edge.arrow.size = 0.5, layout = layout_with_kk, rescale=FALSE, xlim=c(-5,5), ylim=c(-5,5), vertex.size=70, vertex.label.color = "black")
 
