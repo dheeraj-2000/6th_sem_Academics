@@ -15,7 +15,6 @@ tkplot(comps[[2]])
 
 g2 = read.delim("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/metadata_2013.txt", sep = "\t")
 metadata_df = read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/metadata_2013.csv", sep = "\t")
-
 friendship_df = read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/Friendship-network_data_2013.csv", sep = " ")
 metadata_df = metadata_df[,c(1,3)]
 friendship_df = friendship_df[,c(1,2)]
