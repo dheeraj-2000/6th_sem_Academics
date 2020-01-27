@@ -38,7 +38,7 @@ make_random <- function(num, prob){
 #r1 = make_random(10, 0.3)
 #r1
 #plot(r1)
-
+library(igraph)
 pl <- function(n){
    v_size <- vector()
    prob <- vector()
