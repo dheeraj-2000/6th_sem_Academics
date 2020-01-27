@@ -23,3 +23,13 @@ plot(table(deg_vec))
 
 
 
+#degree distribution for real world facebook network
+
+
+library(igraph)
+g2 = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/degree distribution/fb1.txt",format = "edgelist")
+t = table(degree(g2))
+plot(t / sum(t),xlab="Degree", ylab="Frequency")
+
+
+
