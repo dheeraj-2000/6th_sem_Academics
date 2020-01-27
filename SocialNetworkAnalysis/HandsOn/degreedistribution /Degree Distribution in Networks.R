@@ -1,6 +1,6 @@
 
 ##################################################
-                      1
+#                      1
 #################################################
 
 #degree distribution for random network
@@ -28,7 +28,7 @@ plot(table(deg_vec))
 
 
 ##################################################
-                        2
+#                        2
 #################################################
 
 #degree distribution for real world facebook network
@@ -42,7 +42,7 @@ plot(t / sum(t),xlab="Degree", ylab="Frequency")
 
 
 ##################################################
-                        3
+#                        3
 #################################################
 
 #degree distribution for scale free network
@@ -60,4 +60,10 @@ g <- sample_pa(10000)
 degree_distribution(g)
 t = table(degree(g))
 plot(t / sum(t),xlab="Degree", ylab="Frequency")
+
+##################################################
+ #   SOME OBSERVATION
+#################################################
+#we can see that distribution in random network is quite distributed and it's like Normal distribution but in the other two cases  that is in real world and scale free network 
+#it's decresing continuously
 
