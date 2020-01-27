@@ -32,4 +32,19 @@ t = table(degree(g2))
 plot(t / sum(t),xlab="Degree", ylab="Frequency")
 
 
+#degree distribution for scale free network
+
+
+library(igraph)
+G = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/fb1.txt",format = "edgelist")
+t = table(degree(G))
+plot(t / sum(t),xlab="Degree", ylab="Frequency")
+sample_pa(n, power = 1, m = NULL, out.dist = NULL, out.seq = NULL,
+          out.pref = FALSE, zero.appeal = 1, directed = TRUE,
+          algorithm = c("psumtree", "psumtree-multiple", "bag"),
+          start.graph = NULL)
+g <- sample_pa(10000)
+degree_distribution(g)
+t = table(degree(g))
+plot(t / sum(t),xlab="Degree", ylab="Frequency")
 
