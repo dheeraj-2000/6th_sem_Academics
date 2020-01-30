@@ -23,5 +23,8 @@ dgree1 <- cbind.data.frame(d1)
 dgree2 <- cbind.data.frame(d2)
 dgree2
 
+#degree.df$degree <- as.numeric(as.character(degree.df$degree))
+ggplot(dgree1, aes(x = Var1, y = Freq )) + geom_point() + geom_point(data = dgree2, color = 'red')
+
 
 
