@@ -27,4 +27,13 @@ dgree2
 ggplot(dgree1, aes(x = Var1, y = Freq )) + geom_point() + geom_point(data = dgree2, color = 'red')
 
 
+#degree centrality ,  
 
+#Cd(i) = sigma Aij
+#Cd*(i) = sigma Aij/ n-1
+
+#closeness centrality, 
+#Cc = 1/ d12+ d13 + d14
+ #Cc(i) = 1/d(ij)
+ 
+#betweeness
