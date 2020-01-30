@@ -1,0 +1,15 @@
+library(ggplot2)
+V1 = c(1,2,3,4)
+V2 = c(5,6,7,8)
+
+df = cbind.data.frame(V1, V2)
+df
+ggplot(df, aes(x = V1, y = V2)) + geom_point()
+V3 = c(7,8,9,10)
+df = cbind.data.frame(df, V3)
+ggplot(df, aes(x = V1, y = V2, size = V2)) + geom_point()
+ggplot(df, aes(x = V1, y = V2, size = V3)) + geom_point()
+ggplot(df, aes(x = V1, y = V2, color = V3)) + geom_point()
+ggplot(df, aes(x = V1, y = V2, color = V3, size = V3 )) + geom_point(shape = 24)
+
+

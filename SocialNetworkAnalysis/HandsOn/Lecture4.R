@@ -22,7 +22,7 @@ make_random <- function(num, prob){
   }
   return (g6)
 }
-g6 = make_random(45, 0.3)
+g6 = make_random(200, 0.3)
 g6
 plot(g6)
 deg_vec = igraph::degree(g6)

@@ -9,7 +9,7 @@ plot(G,layout=layout.bipartite, edge.color = "red")
 
 g = graph(c(1,2,1,3,2,5,4,2,3,4,4,5))
 write_graph(g, "/home/dheeraj/mygraph.csv", format = "edgelist")
-g2 = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/facebook_combined.txt", format = "edgelist")
+g2 = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/fb1.txt", format = "edgelist")
 V(g2)
 E(g2)
 V(g2)
