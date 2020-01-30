@@ -13,3 +13,11 @@ ggplot(df, aes(x = V1, y = V2, color = V3)) + geom_point()
 ggplot(df, aes(x = V1, y = V2, color = V3, size = V3 )) + geom_point(shape = 24)
 
 
+
+library(igraph)
+Rfb1 = erdos.renyi.game(4039,0.0108)
+Rfb2 = erdos.renyi.game(4039,0.03)
+d1 <- table(degree(Rfb1))
+d2 <- table(degree(Rfb2))
+
+
