@@ -37,3 +37,29 @@ ggplot(dgree1, aes(x = Var1, y = Freq )) + geom_point() + geom_point(data = dgre
  #Cc(i) = 1/d(ij)
  
 #betweeness
+
+
+g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/karate.gml", format = "gml")
+V(g)$degree = igraph::degree(g)
+V(g)[2]$degree
+order(V(g)$degree)
+V(g)[12]$gegree
+order((V(g)$degree), decreasing = T)
+
+top_deg <- order((V(g)$degree), decreasing = T)[1:5]
+top_deg
+V(g)$closeness = igraph::closeness(g)
+
+topclose = order((V(g)$closeness), decreasing = T)[1:5]
+topclose
+
+V(g)$betweeness = igraph::betweenness(g)
+topbw = order((V(g)$betweeness), decreasing = T)[1:5]
+topbw
+
+topnodes = intersect(intersect(top_deg, topclose), topbw)
+topnodes
+
+plot(g, mark.groups = topnodes, mark.col = 'green')
+plot(g, mark.groups = (c(1,2), c(3,4)), mark.col = 'green')
+plot(g, mark.groups = c((1,2), (3,4)), mark.col = 'green')
