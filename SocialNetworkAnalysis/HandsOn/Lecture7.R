@@ -19,5 +19,9 @@ Rfb1 = erdos.renyi.game(4039,0.0108)
 Rfb2 = erdos.renyi.game(4039,0.03)
 d1 <- table(degree(Rfb1))
 d2 <- table(degree(Rfb2))
+dgree1 <- cbind.data.frame(d1)
+dgree2 <- cbind.data.frame(d2)
+dgree2
+
 
 
