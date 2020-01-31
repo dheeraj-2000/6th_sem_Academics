@@ -38,7 +38,6 @@ ggplot(dgree1, aes(x = Var1, y = Freq )) + geom_point() + geom_point(data = dgre
  
 #betweeness
 
-
 g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/karate.gml", format = "gml")
 V(g)$degree = igraph::degree(g)
 V(g)[2]$degree
