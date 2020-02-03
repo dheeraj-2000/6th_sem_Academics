@@ -62,3 +62,27 @@ topnodes
 plot(g, mark.groups = topnodes, mark.col = 'green')
 plot(g, mark.groups = (c(1,2), c(3,4)), mark.col = 'green')
 plot(g, mark.groups = c((1,2), (3,4)), mark.col = 'green')
+
+
+
+
+Hi
+
+hey
+
+arr = [12, 1, 3, 5, 89, 24]
+max = arr[0];
+for (int i = 1; i< sizeof(arr); i++){
+  if(arr[i] >max)
+    max = arr[i];
+  else 
+    continue;
+}
+
+
+swap(int a, int b){
+  int temp = a
+  a = b
+  b = temp;
+  
+}
