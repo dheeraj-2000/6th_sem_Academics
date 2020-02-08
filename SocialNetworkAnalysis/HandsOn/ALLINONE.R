@@ -25,3 +25,10 @@ g2 = read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnal
 V(g)
 E(g)
 
+#getting betweeness
+V(g1)$betweeness = igraph::betweenness(g1)
+V(g1)$betweeness
+
+#getting closeness
+V(g1)$closeness = igraph::closeness(g)
+V(g1)$closeness 
