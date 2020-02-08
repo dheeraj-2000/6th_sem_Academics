@@ -1,4 +1,5 @@
 library(igraph)
+#####################READING THE FRIENDSHIP GRAPH############################33
 g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/Friendship-network_data_2013.csv", format = "edgelist")
 V(g)
 E(g)
@@ -72,3 +73,13 @@ V(tesla)$closeness
 
 tesla_dist = table (V(tesla)$degree)
 plot (tesla_dist, xlab = "degree", ylab = "frequency")
+
+# Finding top nodes using all the three attributes
+Topdeg = order(V(tesla)$degree,decreasing=T)[1:5]
+Topclose = order(V(tesla)$closeness,decreasing=T)[1:5]
+Topbw = order(V(tesla)$betweenness,decreasing=T)[1:5]
+
+Top = intersect(Topdeg,Topclose)
+Top = intersect(Top,Topbw)
+plot (g, mark.groups=Top, mark.col="yellow", vertex.size = 2, vertex.label = NA, edge.color = "red", vertex.color = "green", edge.width = 0.5, layout = layout_with_kk)
+
