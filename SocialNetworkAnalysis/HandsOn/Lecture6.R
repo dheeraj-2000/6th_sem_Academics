@@ -1,7 +1,6 @@
 
 library(igraph)
 g1 <- graph( edges=c(1,2, 2,3, 3, 1), n=3, directed=F ) 
-
 make_random <- function(num, prob){
   g6 = make_empty_graph(n = num)
   for(i in 1:(num-1)){
