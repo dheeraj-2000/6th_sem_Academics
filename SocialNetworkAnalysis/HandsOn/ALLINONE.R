@@ -45,3 +45,12 @@ Top = intersect(Top,Topbw)
 
 plot (g1, mark.groups=Top, mark.col="yellow", vertex.size = 2, vertex.label = NA, edge.color = "red", vertex.color = "black", edge.width = 0.5, layout = layout_with_kk)
 
+V(g1)[g1 [,1]]$gender = g1 [,3]
+# Delete vertices which do not have gender specified
+g4 = delete.vertices (g1, V(g1)[is.na(V(g1)$gender)])
+g4 = delete.vertices (g4, V(g4)$gender == "3")
+
+V(g4)$type = ifelse(V(g4)$gender == "1", T , F)
+# plot the undirected graph based on gender: Male (blue), Female (red)
+V(g4)$color = ifelse (V(g4)$type, "blue", "red")
+tkplot (g4, vertex.size = 5, vertex.label = NA, edge.color = "black", vertex.color = V(g4)$color, edge.width = 0.5, layout = layout_with_kk)
