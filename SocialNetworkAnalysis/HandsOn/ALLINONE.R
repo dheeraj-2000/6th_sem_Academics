@@ -12,7 +12,8 @@ tkplot (g1, vertex.size = 2, vertex.label = NA, edge.color = "red", vertex.color
 components(g1)
 comps = decompose(g1)
 comps
-tkplot(comps[[2]])
+tesla = comps[[2]]
+tkplot(tesla)
 
 g3 = delete.vertices (g1, V(g1) [V(g1)$degree == 0])
 tkplot (g1, vertex.size = 2, vertex.label = NA, edge.color = "red", vertex.color = "green", edge.width = 0.5, layout = layout_with_kk)
@@ -54,3 +55,20 @@ V(g4)$type = ifelse(V(g4)$gender == "1", T , F)
 # plot the undirected graph based on gender: Male (blue), Female (red)
 V(g4)$color = ifelse (V(g4)$type, "blue", "red")
 tkplot (g4, vertex.size = 5, vertex.label = NA, edge.color = "black", vertex.color = V(g4)$color, edge.width = 0.5, layout = layout_with_kk)
+
+  
+
+
+V(tesla)$degree = igraph::degree (tesla)
+V(tesla)$degree
+
+#getting betweeness
+V(tesla)$betweeness = igraph::betweenness(tesla)
+V(tesla)$betweeness
+
+#getting closeness
+V(tesla)$closeness = igraph::closeness(tesla)
+V(tesla)$closeness 
+
+tesla_dist = table (V(tesla)$degree)
+plot (tesla_dist, xlab = "degree", ylab = "frequency")
