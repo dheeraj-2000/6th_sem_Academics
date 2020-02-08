@@ -4,15 +4,20 @@ g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAna
 V(g)                      # GET THE NUMBER OF VERTICES
 E(g)                      # GET THE NUMBER OF EDGES
 tkplot (g, vertex.label = NA, vertex.color = "green", reciprocity= TRUE, edge.color = "red", edge.arrow.size = 0.5, layout = layout_with_kk, rescale=FALSE, xlim=c(-5,5), ylim=c(-5,5), vertex.size=2, vertex.label.color = "black")
-###############  PROPERTY ####
+###############  PROPERTY of friend graph ####
 reciprocity(g) 
-
+diameter(g)
+transitivity(g)
 
 ################ MAKING THE GRAPH AS A UNDIRECTED ################33
 g1 = as.undirected(g, mode = "mutual")
 V(g1)   #vertex for undirected
 E(g1)   # GET THE NUMBER OF EDGES FOR UNDIRECTED
 tkplot (g1, vertex.size = 2, vertex.label = NA, edge.color = "red", vertex.color = "green", edge.width = 0.5, layout = layout_with_kk)
+################## property of undirected graph
+diameter(g1) 
+transitivity(g1)
+
 
 ################ COMPONENTS IN THE UNDIRECTED GRAPH ####################3
 components(g1)
@@ -20,6 +25,11 @@ comps = decompose(g1)
 comps
 tesla = comps[[2]]
 tkplot(tesla)
+
+#################################################  property for comps ##############################3
+reciprocity(tesla) 
+diameter(tesla)
+transitivity(tesla)
 
 
 # Plot degree distribution FOR UNDIRECTED GRAPH G1
