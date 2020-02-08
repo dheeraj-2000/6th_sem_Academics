@@ -25,10 +25,23 @@ g2 = read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnal
 V(g)
 E(g)
 
+V(g1)$degree = igraph::degree (g1)
+V(g1)$degree
+
 #getting betweeness
 V(g1)$betweeness = igraph::betweenness(g1)
 V(g1)$betweeness
 
 #getting closeness
-V(g1)$closeness = igraph::closeness(g)
+V(g1)$closeness = igraph::closeness(g1)
 V(g1)$closeness 
+
+Topdeg = order(V(g1)$degree,decreasing=T)[1:5]
+Topclose = order(V(g1)$closeness,decreasing=T)[1:5]
+Topbw = order(V(g1)$betweenness,decreasing=T)[1:5]
+
+Top = intersect(Topdeg,Topclose)
+Top = intersect(Top,Topbw)
+
+plot (g1, mark.groups=Top, mark.col="yellow", vertex.size = 2, vertex.label = NA, edge.color = "red", vertex.color = "black", edge.width = 0.5, layout = layout_with_kk)
+
