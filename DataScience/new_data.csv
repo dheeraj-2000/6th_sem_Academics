@@ -1,4 +1,4 @@
-"","year","event_Reg_LBirth","event_Reg_SBirth","event_Reg_Deaths","CRS_Births","CRS_deaths","%ofCRS_SRS_Births","%ofCRS_SRS_Deaths"
+"","year","event_Reg_LBirth","event_Reg_SBirth","event_Reg_Deaths","CRS_Births","CRS_deaths","percent_ofCRS_SRS_Births","percent_ofCRS_SRS_Deaths"
 "12",2011,1108562,6940,384745,18.72,6.5,99.47,91.55
 "13",2012,1124490,6524,407015,18.62,6.74,100,94.93
 "14",2013,1068671,5708,413635,17.54,6.79,95.85,97
