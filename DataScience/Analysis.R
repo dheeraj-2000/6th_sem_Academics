@@ -1,5 +1,6 @@
 library(tabulizer)
 library(dplyr)
+
 original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
 read_pdf <- extract_areas(original_data,pages = 11,output = "data.frame",header = F)
 read_pdf
@@ -10,7 +11,6 @@ colnames(read_pdf) <- c("year","event_Reg_LBirth","event_Reg_SBirth","event_Reg_
 read_pdf
 m <- tail(read_pdf, -11)
 write.csv(m, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/new_data.csv")
-
 nw_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/new_data.csv")
 nw_read
 nw_read$X <- NULL
@@ -75,13 +75,13 @@ sd(nw_read[["percent_ofCRS_SRS_Births"]])
 IQR(nw_read[["percent_ofCRS_SRS_Births"]])
 
 
-min(nw_read[["event_Reg_LBirth"]])
-max(nw_read[["event_Reg_LBirth"]])
-mean(nw_read[["event_Reg_LBirth"]])
-median(nw_read[["event_Reg_LBirth"]])
-mode(nw_read[["event_Reg_LBirth"]])
-var(nw_read[["event_Reg_LBirth"]])
-sd(nw_read[["event_Reg_LBirth"]])
-IQR(nw_read[["event_Reg_LBirth"]])
+min(nw_read[["percent_ofCRS_SRS_Deaths"]])
+max(nw_read[["percent_ofCRS_SRS_Deaths"]])
+mean(nw_read[["percent_ofCRS_SRS_Deaths"]])
+median(nw_read[["percent_ofCRS_SRS_Deaths"]])
+mode(nw_read[["percent_ofCRS_SRS_Deaths"]])
+var(nw_read[["percent_ofCRS_SRS_Deaths"]])
+sd(nw_read[["percent_ofCRS_SRS_Deaths"]])
+IQR(nw_read[["percent_ofCRS_SRS_Deaths"]])
 
 
