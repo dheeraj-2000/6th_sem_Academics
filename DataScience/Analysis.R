@@ -97,3 +97,10 @@ District_Rural
 District_Rural <- as.data.frame(District_Rural)
 colnames(District_Rural) <- c("Districts","Birth_reg","Birth_rate","Death_reg","Death_rate","Reg_infant_death","Still_birth_reg","Still_birth_rate")
 District_Rural
+
+#detect outliers
+boxplot(District_Rural$Reg_infant_death)
+num = as.numeric(District_Rural$Reg_infant_death)
+outvalues = boxplot(num)$out
+which(District_Rural$Reg_infant_death %in% outvalues)  #according to the output District having index 27 that is UMKUR have highest registered infant death
+
