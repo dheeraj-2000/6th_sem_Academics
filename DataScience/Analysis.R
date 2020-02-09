@@ -84,4 +84,18 @@ var(nw_read[["percent_ofCRS_SRS_Deaths"]])
 sd(nw_read[["percent_ofCRS_SRS_Deaths"]])
 IQR(nw_read[["percent_ofCRS_SRS_Deaths"]])
 
+original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
+read_pdf <- extract_areas(original_data,pages = 16,output = "data.frame",header = F)
+read_pdf
+read_pdf <- as.data.frame(read_pdf)
+df
+colnames(read_pdf) <- c("year","event_Reg_LBirth","event_Reg_SBirth","event_Reg_Deaths","CRS_Births","CRS_deaths","percent_ofCRS_SRS_Births",
+                        "percent_ofCRS_SRS_Deaths")
 
+original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
+read_pdf <- extract_areas(original_data,pages = 17,output = "data.frame",header = F)
+read_pdf
+read_pdf <- as.data.frame(read_pdf)
+df
+colnames(read_pdf) <- c("year","event_Reg_LBirth","event_Reg_SBirth","event_Reg_Deaths","CRS_Births","CRS_deaths","percent_ofCRS_SRS_Births",
+                        "percent_ofCRS_SRS_Deaths")
