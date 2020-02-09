@@ -104,3 +104,7 @@ num = as.numeric(District_Rural$Reg_infant_death)
 outvalues = boxplot(num)$out
 which(District_Rural$Reg_infant_death %in% outvalues)  #according to the output District having index 27 that is UMKUR have highest registered infant death
 
+#remove outlier and plot again
+removed = District_Rural$Reg_infant_death[!(District_Rural$Reg_infant_death %in% outvalues)]
+#box plot of registered infant death without outliers
+boxplot(removed)
