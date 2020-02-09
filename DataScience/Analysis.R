@@ -87,14 +87,13 @@ original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CR
 District_Urban <- extract_areas(original_data,pages = 16,output = "data.frame",header = F)
 District_Urban
 District_Urban <- as.data.frame(District_Urban)
-df
-colnames(read_pdf) <- c("year","event_Reg_LBirth","event_Reg_SBirth","event_Reg_Deaths","CRS_Births","CRS_deaths","percent_ofCRS_SRS_Births",
-                        "percent_ofCRS_SRS_Deaths")
+colnames(District_Urban) <- c("Districts","Reg_birth","Birth_rate","Reg_death","Death_rate","Reg_infant_death","Reg_still_birth","Still_birth_rate")
+District_Urban
+
 
 original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
-read_pdf <- extract_areas(original_data,pages = 17,output = "data.frame",header = F)
-read_pdf
-read_pdf <- as.data.frame(read_pdf)
-df
-colnames(read_pdf) <- c("year","event_Reg_LBirth","event_Reg_SBirth","event_Reg_Deaths","CRS_Births","CRS_deaths","percent_ofCRS_SRS_Births",
-                        "percent_ofCRS_SRS_Deaths")
+District_Rural <- extract_areas(original_data,pages = 17,output = "data.frame",header = F)
+District_Rural
+District_Rural <- as.data.frame(District_Rural)
+colnames(District_Rural) <- c("Districts","Birth_reg","Birth_rate","Death_reg","Death_rate","Reg_infant_death","Still_birth_reg","Still_birth_rate")
+District_Rural
