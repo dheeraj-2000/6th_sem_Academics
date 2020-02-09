@@ -61,6 +61,7 @@ plot(t / sum(t),xlab="Degree", ylab="Frequency")
 
 ##################################################
  #   SOME OBSERVATION
+
 #################################################
 #we can see that distribution in random network is quite distributed and it's like Normal distribution but in the other two cases  that is in real world and scale free network 
 #it's decresing continuously
