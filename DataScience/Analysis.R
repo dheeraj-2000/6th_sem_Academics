@@ -94,9 +94,9 @@ var(nw_read[["percent_ofCRS_SRS_Deaths"]])
 sd(nw_read[["percent_ofCRS_SRS_Deaths"]])
 IQR(nw_read[["percent_ofCRS_SRS_Deaths"]])    
 
-#line plot
+############### PLOT 1: Line plot for number of vital event registered for various years
 ggplot(nw_read,aes(x = year,y = event_Reg_LBirth)) + geom_line(color = "red") + ggtitle("Number of vital events registered  Live Birth VS Year")
-
+############### DESCRIPTION OF PLOT 1: It can be clearly seen from the plot that in year 2012 highest number of vital event registered 
 #scatter plot
 attach(nw_read)
 plot(year, percent_ofCRS_SRS_Deaths, main="Scatterplot_year vs percent_ofCRS_SRS_Deaths ",
