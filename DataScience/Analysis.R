@@ -1,15 +1,15 @@
 library(tabulizer)
 library(dplyr)
 
-original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
-read_pdf <- extract_areas(original_data,pages = 11,output = "data.frame",header = F)
-read_pdf
-read_pdf <- as.data.frame(read_pdf)
-colnames(read_pdf) <- c("year","event_Reg_LBirth","event_Reg_SBirth","event_Reg_Deaths","CRS_Births","CRS_deaths","percent_ofCRS_SRS_Births",
-                   "percent_ofCRS_SRS_Deaths")
-read_pdf
-m <- tail(read_pdf, -11)
-write.csv(m, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/new_data.csv")
+#original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
+#read_pdf <- extract_areas(original_data,pages = 11,output = "data.frame",header = F)
+#read_pdf
+#read_pdf <- as.data.frame(read_pdf)
+#colnames(read_pdf) <- c("year","event_Reg_LBirth","event_Reg_SBirth","event_Reg_Deaths","CRS_Births","CRS_deaths","percent_ofCRS_SRS_Births",
+ #                  "percent_ofCRS_SRS_Deaths")
+#read_pdf
+#m <- tail(read_pdf, -11)
+#write.csv(m, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/new_data.csv")
 nw_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/new_data.csv")
 nw_read
 nw_read$X <- NULL
@@ -89,7 +89,9 @@ District_Urban
 District_Urban <- as.data.frame(District_Urban)
 colnames(District_Urban) <- c("Districts","Reg_birth","Birth_rate","Reg_death","Death_rate","Reg_infant_death","Reg_still_birth","Still_birth_rate")
 District_Urban
-
+write.csv(District_Urban, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_urbn.csv", row.names = FALSE)
+dist_urban_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_urbn.csv")
+dist_urban_read
 
 original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
 District_Rural <- extract_areas(original_data,pages = 17,output = "data.frame",header = F)
@@ -97,7 +99,9 @@ District_Rural
 District_Rural <- as.data.frame(District_Rural)
 colnames(District_Rural) <- c("Districts","Birth_reg","Birth_rate","Death_reg","Death_rate","Reg_infant_death","Still_birth_reg","Still_birth_rate")
 District_Rural
-
+write.csv(District_Rural, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_rural.csv", row.names = FALSE)
+dist_rural_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_rural.csv")
+dist_rural_read
 #detect outliers
 boxplot(District_Rural$Reg_infant_death)
 num = as.numeric(District_Rural$Reg_infant_death)
