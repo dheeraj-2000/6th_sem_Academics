@@ -106,6 +106,8 @@ plot(year, percent_ofCRS_SRS_Deaths, main="Scatterplot_year vs percent_ofCRS_SRS
 
 
 
+
+
 #############################  Reading the pdf file and Extracting districtwise aalysis for URBAN  ######################################
 
 original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"  #
@@ -127,6 +129,11 @@ ggplot(Urban_analysis,aes(x = Districts , y = value,fill = variable))+ylab("quan
 
 
 
+
+
+
+#############################  Reading the pdf file and Extracting districtwise aalysis for RURAL  #####################################
+
 original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
 District_Rural <- extract_areas(original_data,pages = 17,output = "data.frame",header = F)
 District_Rural
@@ -136,12 +143,15 @@ District_Rural
 write.csv(District_Rural, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_rural.csv", row.names = FALSE)
 dist_rural_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_rural.csv")
 dist_rural_read
-#detect outliers
+
+############### PLOT 4: Box plot for visualizing registered infant death RuRAL District with OUTLIERS
 boxplot(District_Rural$Reg_infant_death)
 num = as.numeric(District_Rural$Reg_infant_death)
 outvalues = boxplot(num)$out
-which(District_Rural$Reg_infant_death %in% outvalues)  #according to the output District having index 27 that is UMKUR have highest registered infant death
-#remove outlier and plot again
+which(District_Rural$Reg_infant_death %in% outvalues) 
+############### DESCRIPTION OF PLOT 4: By seeing the plot we got the median as 27 that means 75 percent of district have registered infant deaths above 27 and 25% have below 27, and a dot is shown which is outlier
+
+############### PLOT 5: Box plot for visualizing registered infant death RuRAL District without OUTLIERS
 removed = District_Rural$Reg_infant_death[!(District_Rural$Reg_infant_death %in% outvalues)]
-#box plot of registered infant death without outliers
 boxplot(removed)
+############### DESCRIPTION OF PLOT 5: we can see that the outlier is removed and we are grtting the desired output
