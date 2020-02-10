@@ -96,14 +96,19 @@ IQR(nw_read[["percent_ofCRS_SRS_Deaths"]])
 
 ############### PLOT 1: Line plot for number of vital event registered for various years
 ggplot(nw_read,aes(x = year,y = event_Reg_LBirth)) + geom_line(color = "red") + ggtitle("Number of vital events registered  Live Birth VS Year")
-############### DESCRIPTION OF PLOT 1: It can be clearly seen from the plot that in year 2012 highest number of vital event registered 
-#scatter plot
+############### DESCRIPTION OF PLOT 1: It can be clearly seen from the plot that in year 2012 highest number of vital event registered  
+
+
+############### PLOT 2: Scatter plot for visualizing Death rates percentage of CRS vs SRS  
 attach(nw_read)
-plot(year, percent_ofCRS_SRS_Deaths, main="Scatterplot_year vs percent_ofCRS_SRS_Deaths ",
-     xlab="year ", ylab="percent_ofCRS_SRS_Deaths ", pch=19)
+plot(year, percent_ofCRS_SRS_Deaths, main="Scatterplot_year vs percent_ofCRS_SRS_Deaths ", xlab="year ", ylab="percent_of_CRS_SRS_Deaths ", pch=19)
+############### DESCRIPTION OF PLOT 2: It can be clearly seen from the plot that in year 2013 highest percentage rate of CRS vs SRS registered  
 
 
-original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
+
+#############################  Reading the pdf file and Extracting districtwise aalysis for URBAN  ######################################
+
+original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"  #
 District_Urban <- extract_areas(original_data,pages = 16,output = "data.frame",header = F)
 District_Urban
 District_Urban <- as.data.frame(District_Urban)
@@ -113,12 +118,12 @@ write.csv(District_Urban, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataS
 dist_urban_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_urbn.csv")
 dist_urban_read
 
+############### PLOT 3: Bar plot for visualizing registered death and birth for urban districts 
 Urban_analysis <- data.frame(District_Urban$Districts,District_Urban$Reg_birth,District_Urban$Reg_death)
 colnames(Urban_analysis) <- c("Districts","Reg_birth_in_the_districts","Reg_death_in_the_districts")
 Urban_analysis <- melt(Urban_analysis,id.vars = "Districts")
-
 ggplot(Urban_analysis,aes(x = Districts , y = value,fill = variable))+ylab("quantity") + geom_bar(stat = "identity",position = "dodge") + theme(axis.text.x = element_text(angle = 90, hjust = 1))
-
+############### DESCRIPTION OF PLOT 3: By seeing the plot we can conclude that Banglore distrist have highest number of registered birth and death, and all the district have higher registered birth then death
 
 
 
