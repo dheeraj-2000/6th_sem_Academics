@@ -1,5 +1,6 @@
 library(tabulizer)
 library(dplyr)
+library(ggplot2)
 
 #original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
 #read_pdf <- extract_areas(original_data,pages = 11,output = "data.frame",header = F)
@@ -14,6 +15,15 @@ nw_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience
 nw_read
 nw_read$X <- NULL
 nw_read
+#line plot
+ggplot(nw_read,aes(x = year,y = event_Reg_LBirth)) + geom_line(color = "red") + ggtitle("Number of vital events registered  Live Birth VS Year")
+
+#scatter plot
+attach(nw_read)
+plot(year, percent_ofCRS_SRS_Deaths, main="Scatterplot_year vs percent_ofCRS_SRS_Deaths ",
+     xlab="year ", ylab="percent_ofCRS_SRS_Deaths ", pch=19)
+#counts <- table(nw_read$event_Reg_Deaths)
+#barplot(counts)
 
 min(nw_read[["event_Reg_LBirth"]])
 max(nw_read[["event_Reg_LBirth"]])
@@ -81,7 +91,9 @@ median(nw_read[["percent_ofCRS_SRS_Deaths"]])
 mode(nw_read[["percent_ofCRS_SRS_Deaths"]])
 var(nw_read[["percent_ofCRS_SRS_Deaths"]])
 sd(nw_read[["percent_ofCRS_SRS_Deaths"]])
-IQR(nw_read[["percent_ofCRS_SRS_Deaths"]])
+IQR(nw_read[["percent_ofCRS_SRS_Deaths"]])    
+
+
 
 original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
 District_Urban <- extract_areas(original_data,pages = 16,output = "data.frame",header = F)
@@ -92,6 +104,7 @@ District_Urban
 write.csv(District_Urban, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_urbn.csv", row.names = FALSE)
 dist_urban_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_urbn.csv")
 dist_urban_read
+
 
 original_data <- "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/CRS_2016.pdf"
 District_Rural <- extract_areas(original_data,pages = 17,output = "data.frame",header = F)
@@ -107,7 +120,6 @@ boxplot(District_Rural$Reg_infant_death)
 num = as.numeric(District_Rural$Reg_infant_death)
 outvalues = boxplot(num)$out
 which(District_Rural$Reg_infant_death %in% outvalues)  #according to the output District having index 27 that is UMKUR have highest registered infant death
-
 #remove outlier and plot again
 removed = District_Rural$Reg_infant_death[!(District_Rural$Reg_infant_death %in% outvalues)]
 #box plot of registered infant death without outliers
