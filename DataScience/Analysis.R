@@ -72,7 +72,7 @@ var(nw_read[["CRS_deaths"]])
 sd(nw_read[["CRS_deaths"]])
 IQR(nw_read[["CRS_deaths"]])
 
-##################### Basic statistics for column 7 i.e, percent_ofCRS_SRS_Births #################
+############## Basic statistics for column 7 i.e, percent_ofCRS_SRS_Births ##########
 
 min(nw_read[["percent_ofCRS_SRS_Births"]])
 max(nw_read[["percent_ofCRS_SRS_Births"]])
@@ -83,7 +83,7 @@ var(nw_read[["percent_ofCRS_SRS_Births"]])
 sd(nw_read[["percent_ofCRS_SRS_Births"]])
 IQR(nw_read[["percent_ofCRS_SRS_Births"]])
 
-##################### Basic statistics for column 8 i.e, percent_ofCRS_SRS_Deaths #################
+############### Basic statistics for column 8 i.e, percent_ofCRS_SRS_Deaths ############
 
 min(nw_read[["percent_ofCRS_SRS_Deaths"]])
 max(nw_read[["percent_ofCRS_SRS_Deaths"]])
