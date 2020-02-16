@@ -26,6 +26,15 @@ max_run <- matches[which.max(matches$win_by_wickets),]
 select(max_run, winner, win_by_wickets)
 # Sunrisers Hyderabad by 9 wicket
 
+########################### Teams and matches won
+matches%>%
+  group_by(winner)%>%
+  summarize(most_win = n())%>%
+  ggplot(aes(x = winner,y = most_win,fill = winner))+
+  geom_bar(stat = "identity")+
+  coord_flip()+
+  scale_y_continuous("Matches won")
+
 
 teams <- data %>% select(batting_team)%>%
   distinct()
@@ -42,6 +51,7 @@ matches$city[matches$city==""] <- "Dubai"
 venue_city <- matches %>%
   select(city)%>%
   distinct()
+
 
 
 ########################## Dissmissal type and number of dismissal ###################################
@@ -105,3 +115,52 @@ ggplot(toss_w,aes(x=s_team,y=wins,colour=type,fill=type))+
   scale_y_continuous(name="Toss and Match Wins")+
   scale_x_discrete(name="Toss and Match winner")+
   ggtitle("Toss and Match wins by each Team")
+
+################## toss decision of toss winner
+wins_1 <- matches%>%
+  left_join(teams,by=c("toss_winner"="team") )%>%
+  select(s_team,toss_winner,toss_decision)%>%
+  group_by(s_team,toss_decision)%>%
+  summarize(wins=n())
+
+
+ggplot(wins_1,aes(x=s_team,y=wins,colour=toss_decision,fill=toss_decision))+
+  geom_bar(position = "dodge",stat = "identity")+
+  theme(legend.position="right")+
+  scale_y_continuous(name="Toss decision")+
+  scale_x_discrete(name="Toss winners and toss decisions")+
+  ggtitle("Toss decisions by each Team")
+
+######################### city with most number of match
+venue_c <- data%>%
+  left_join(matches,by=c("match_id"="id"))%>%
+  select(match_id,city,total_runs,wickets)%>%
+  group_by(city)%>%
+  summarize(runs=sum(total_runs),wickets=sum(wickets,na.rm=TRUE))
+
+city_mat <- matches %>%
+  group_by(city)%>%
+  summarize(matches=n())
+
+venue_c <- venue_c %>%
+  left_join(city_mat, by=c("city"="city"))%>%
+  mutate(Avg_runs=runs/matches)%>%
+  mutate(Avg_wkt =wickets/matches)%>%
+  arrange(city)
+
+venue_all <- venue_c%>%
+  left_join(venue_city, by=c("city"="city"))%>%
+  arrange(Avg_runs)
+venue_all$city <- factor(venue_all$city, levels = venue_all$city[order(venue_all$matches)])
+
+ggplot(venue_all,aes(x=city,y=matches,colour=city,fill=city))+
+  geom_bar(position = "dodge",stat = "identity")+
+  theme(legend.position="none")+
+  coord_flip()+
+  scale_y_continuous(name="Total no of Matches in each city")+
+  scale_x_discrete(name="Cities ")+
+  ggtitle("Cities with most no of matches")
+
+
+
+
