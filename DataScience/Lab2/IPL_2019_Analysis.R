@@ -51,11 +51,57 @@ dismissal <- data%>%
   filter(dismissal_kind!="")%>%
   group_by(season,dismissal_kind,s_team)%>%
   summarize(wickets =n())
-ggplot(dismissal,aes(x=dismissal_kind,y=wickets,colour=as.factor(season),fill=as.factor(season)))+
+ggplot(dismissal,aes(x=dismissal_kind,y=wickets,colour=as.factor(season), fill=as.factor(season)))+
   geom_bar(position = "stack", show.legend = TRUE, width =.6,stat="identity")+
   theme(legend.position="bottom")+
   coord_flip()+
   theme(legend.direction = "horizontal") +
   scale_y_continuous(name="wickets")+
   scale_x_discrete(name="dismissal kind")+
-  ggtitle("Breakdown of dismissal type")
+  ggtitle("Breakdown of dismissal type ")
+
+
+######################## Run scored in 1s to 7s
+runs_cat <- data %>%
+  left_join(matches,by=c("match_id"="id"))%>%
+  left_join(teams,by=c("batting_team"="team"))%>%
+  group_by(s_team,batsman_runs)%>%
+  summarize(no=n(),runs=sum(total_runs))
+
+runs_cat$batsman_runs <- as.factor(runs_cat$batsman_runs)
+
+ggplot(runs_cat,aes(x=s_team,y=runs,colour=batsman_runs,fill=batsman_runs))+
+  geom_bar(position = "stack", show.legend = TRUE, width =.6,stat="identity")+
+  theme(legend.position="bottom")+
+  theme(legend.direction = "horizontal") +
+  scale_y_continuous(name="Runs")+
+  scale_x_discrete(name="Teams")+
+  ggtitle("Total runs scored in 1s to 7s")
+
+
+
+############### toss and match win
+toss <- matches%>%
+  left_join(teams,by=c("toss_winner"="team") )%>%
+  select(s_team,toss_winner)%>%
+  group_by(s_team)%>%
+  summarize(wins=n())
+toss$type <- "toss"
+
+wins <-matches%>%
+  left_join(teams,by=c("winner"="team") )%>%
+  select(s_team,winner)%>%
+  group_by(s_team)%>%
+  summarize(wins=n())
+wins$type <- "wins"
+
+toss_w <- rbind(toss,wins)
+toss_w <- toss_w %>%
+  group_by(s_team, type)%>%
+  summarize(wins=sum(wins))
+ggplot(toss_w,aes(x=s_team,y=wins,colour=type,fill=type))+
+  geom_bar(position = "dodge",stat = "identity")+
+  theme(legend.position="right")+
+  scale_y_continuous(name="Toss and Match Wins")+
+  scale_x_discrete(name="Toss and Match winner")+
+  ggtitle("Toss and Match wins by each Team")
