@@ -151,6 +151,63 @@ outvalues = boxplot(num)$out
 which(District_Rural$Reg_infant_death %in% outvalues) 
 ############### DESCRIPTION OF PLOT 4: By seeing the plot we got the median as 27 that means 75 percent of district have registered infant deaths above 27 and 25% have below 27, and a dot is shown which is outlier
 
+
+
+############### toss and match win
+toss <- matches%>%
+  left_join(teams,by=c("toss_winner"="team") )%>%
+  select(s_team,toss_winner)%>%
+  group_by(s_team)%>%
+  summarize(wins=n())
+toss$type <- "toss"
+
+wins <-matches%>%
+  left_join(teams,by=c("winner"="team") )%>%
+  select(s_team,winner)%>%
+  group_by(s_team)%>%
+  summarize(wins=n())
+wins$type <- "wins"
+
+toss_w <- rbind(toss,wins)
+toss_w <- toss_w %>%
+  group_by(s_team, type)%>%
+  summarize(wins=sum(wins))
+ggplot(toss_w,aes(x=s_team,y=wins,colour=type,fill=type))+
+  geom_bar(position = "dodge",stat = "identity")+
+  theme(legend.position="right")+
+  scale_y_continuous(name="Toss and Match Wins")+
+  scale_x_discrete(name="Toss and Match winner")+
+  ggtitle("Toss and Match wins by each Team")
+
+######################### city with most number of match
+venue_c <- data%>%
+  left_join(matches,by=c("match_id"="id"))%>%
+  select(match_id,city,total_runs,wickets)%>%
+  group_by(city)%>%
+  summarize(runs=sum(total_runs),wickets=sum(wickets,na.rm=TRUE))
+
+city_mat <- matches %>%
+  group_by(city)%>%
+  summarize(matches=n())
+
+venue_c <- venue_c %>%
+  left_join(city_mat, by=c("city"="city"))%>%
+  mutate(Avg_runs=runs/matches)%>%
+  mutate(Avg_wkt =wickets/matches)%>%
+  arrange(city)
+
+venue_all <- venue_c%>%
+  left_join(venue_city, by=c("city"="city"))%>%
+  arrange(Avg_runs)
+venue_all$city <- factor(venue_all$city, levels = venue_all$city[order(venue_all$matches)])
+
+ggplot(venue_all,aes(x=city,y=matches,colour=city,fill=city))+
+  geom_bar(position = "dodge",stat = "identity")+
+  theme(legend.position="none")+
+  coord_flip()+
+  scale_y_continuous(name="Total no of Matches in each city")+
+  scale_x_discrete(name="Cities ")+
+  ggtitle("Cities with most no of matches")
 ############### PLOT 5: Box plot for visualizing registered infant death RuRAL District without OUTLIERS
 removed = District_Rural$Reg_infant_death[!(District_Rural$Reg_infant_death %in% outvalues)]
 boxplot(removed)
