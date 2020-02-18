@@ -5,6 +5,7 @@ library(reshape2)
 library(magrittr)
 library(tidyr)
 
+####   READING MATCHES CSV FILE #########
 matches <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/matches.csv", stringsAsFactors = FALSE)
 
 data <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/deliveries.csv", stringsAsFactors = FALSE)
@@ -12,7 +13,7 @@ data <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/La
 matches <- matches[,-18]
 data$wickets <- as.numeric(ifelse(data$player_dismissed =="" ,"",1))
 
-#number of matches in the dataset
+########number of matches in the dataset
 summarize(matches,no_of_matches = n())
 # Output = 60
 
@@ -41,6 +42,7 @@ teams <- data %>% select(batting_team)%>%
 teams <- rename(teams, team = batting_team) 
 teams
 s_team <- c("RCB","CSK","SRH","KKR","DC","MI","KXIP","RR")
+s_team
 teams <- cbind(teams, s_team)
 player_of_match <- matches%>% select(id,player_of_match,season) %>%
   distinct()
@@ -161,5 +163,20 @@ ggplot(venue_all,aes(x=city,y=matches,colour=city,fill=city))+
   ggtitle("Cities with most no of matches")
 
 
+############### READIG FILE ###################################
 
-
+comado <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/most_run.csv")
+head(comado)
+comado <- as.data.frame(comado)
+comado[1,]
+#colnames(comado) <-  c(comado[4])
+comado[order(comado[,1]),]
+co
+a <- comado[order(comado$RUNS),]
+a
+b <- a[order(comado$SR),]
+b
+c <- b[order(comado$AVG),]
+c
+d <- c[order(comado$RUNS),]
+d
