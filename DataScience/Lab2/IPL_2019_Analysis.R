@@ -203,11 +203,11 @@ bowling_stats[order(bowling_stats[,1]),]
 
 a <- bowling_stats[order(-bowling_stats$WKTS),]
 a
-b  <- a[order(bowling_stats$MATCHES),]
+b  <- a[order(bowling_stats$RUNS),]
 b
-c <- b[order(-bowling_stats$BALLS),]
+c <- b[order(-bowling_stats$WKTS),]
 c
-d <- c[order(bowling_stats$RUNS),]
+d <- c[order(-bowling_stats$BALLS),]
 d
 
 
