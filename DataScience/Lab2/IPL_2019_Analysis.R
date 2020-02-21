@@ -181,7 +181,10 @@ d
 e <- d[order(-most_runs$X4S),]
 e
 
-head(e)
+############# Player who topped the list ###################
+select(head(e, n=1), PLAYER, RUNS)
+
+
 
 
 ############### READIG FILE ###################################
