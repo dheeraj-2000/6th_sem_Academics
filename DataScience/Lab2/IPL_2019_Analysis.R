@@ -167,7 +167,6 @@ ggplot(venue_all,aes(x=city,y=matches,colour=city,fill=city))+
 
 most_runs <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/batting_stats.csv")
 head(most_runs)
-most_runs[order(most_runs[,1]),]
 
 ############## Ordering According to Priority ################
 a <- most_runs[order(-most_runs$RUNS),]
@@ -182,8 +181,37 @@ e <- d[order(-most_runs$X4S),]
 e
 
 ############# Player who topped the list ###################
-select(head(e, n=1), PLAYER, RUNS)
+select(head(e, n=1), PLAYER)
 
+########### Player who scored maximum runs #################
+max_run <- e[which.max(e$RUNS),]
+select(max_run, PLAYER)
+
+########### Player who've highest Strike Rate ##############
+max_sr <- e[which.max(e$SR),]
+select(max_sr, PLAYER)
+
+############# Player who hit highest 4rs ###################
+max_fours <- e[which.max(e$X4S),]
+select(max_fours, PLAYER)
+
+############# Player who've highest Average ###################
+max_avg <- e[which.max(e$AVG),]
+select(max_avg, PLAYER)
+
+############# Player who hit highest Sixes ###################
+max_sixes <- e[which.max(e$X6S),]
+select(max_sixes, PLAYER)
+
+############# Player who played minimum match ###############
+min_match <- e[which.min(e$MATCHES),]
+select(min_match, PLAYER)
+
+############# Top ten player's name in my list ###################
+select(head(e, n=10), PLAYER)
+
+########## Top ten player's with their data in my list ###########
+select(head(e, n=10), PLAYER,INN, RUNS, AVG, SR ,X4S, X6S )
 
 
 
@@ -191,7 +219,6 @@ select(head(e, n=1), PLAYER, RUNS)
 
 bowling_stats <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/bowling_stats.csv")
 head(bowling_stats)  
-bowling_stats[order(bowling_stats[,1]),]
 
 ############## Ordering According to Priority ################
 a <- bowling_stats[order(-bowling_stats$WKTS),]
@@ -200,8 +227,33 @@ b  <- a[order(bowling_stats$BALLS),]
 b
 c <- b[order(bowling_stats$MATCHES),]
 c
-d <- c[order(-bowling_stats$RUNS),]
-d
+e <- c[order(-bowling_stats$RUNS),]
+e
+
+############# Player who topped the list ###################
+select(head(e, n=1), PLAYER)
+
+########### Player who taken maximum wicket ################
+max_wkt <- e[which.max(e$WKTS),]
+select(max_wkt, PLAYER)
+
+########### Player who've thrown maximum balls ##############
+max_ball <- e[which.max(e$BALLS),]
+select(max_ball, PLAYER)
+
+############# Player who gave minimum runs ##################
+min_run <- e[which.min(e$RUNS),]
+select(min_run, PLAYER)
+
+############# Player who played minimum match ###############
+min_match <- e[which.min(e$MATCHES),]
+select(min_match, PLAYER)
+
+############# Top ten player's name in my list ###################
+select(head(e, n=10), PLAYER)
+
+########## Top ten player's with their data in my list ###########
+select(head(e, n=10), PLAYER, MATCHES, BALLS, RUNS, WKTS )
 
 
 
