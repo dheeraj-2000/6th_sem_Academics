@@ -167,9 +167,7 @@ ggplot(venue_all,aes(x=city,y=matches,colour=city,fill=city))+
 
 most_runs <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/most_run.csv")
 head(most_runs)
-#most_runs <- as.data.frame(most_runs)
-#comado[1,]
-#colnames(comado) <-  c(comado[4])
+
 most_runs[order(most_runs[,1]),]
 
 a <- most_runs[order(-most_runs$RUNS),]
@@ -182,7 +180,5 @@ d <- c[order(-most_runs$SR),]
 d
 e <- d[order(-most_runs$X4S),]
 e
-f <- e[order(-most_runs$X4S),]
-f
 
 
