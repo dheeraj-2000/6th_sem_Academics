@@ -201,6 +201,7 @@ bowling_stats <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataS
 head(bowling_stats)  
 bowling_stats[order(bowling_stats[,1]),]
 
+############## Ordering According to Priority ################
 a <- bowling_stats[order(-bowling_stats$WKTS),]
 a
 b  <- a[order(bowling_stats$BALLS),]
@@ -209,6 +210,7 @@ c <- b[order(bowling_stats$MATCHES),]
 c
 d <- c[order(-bowling_stats$RUNS),]
 d
+
 
 
 
