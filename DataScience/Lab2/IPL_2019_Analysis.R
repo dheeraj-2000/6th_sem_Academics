@@ -181,5 +181,8 @@ d
 e <- d[order(-most_runs$X4S),]
 e
 
-  
+############### READIG FILE ###################################
 
+bowling_stats <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/bowling_stats.csv")
+head(bowling_stats)  
+bowling_stats[order(bowling_stats[,1]),]
