@@ -165,18 +165,24 @@ ggplot(venue_all,aes(x=city,y=matches,colour=city,fill=city))+
 
 ############### READIG FILE ###################################
 
-comado <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/most_run.csv")
-head(comado)
-comado <- as.data.frame(comado)
-comado[1,]
+most_runs <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/most_run.csv")
+head(most_runs)
+#most_runs <- as.data.frame(most_runs)
+#comado[1,]
 #colnames(comado) <-  c(comado[4])
-comado[order(comado[,1]),]
-co
-a <- comado[order(comado$RUNS),]
+most_runs[order(most_runs[,1]),]
+
+a <- most_runs[order(-most_runs$RUNS),]
 a
-b <- a[order(comado$SR),]
+b <- a[order(-most_runs$AVG),]
 b
-c <- b[order(comado$AVG),]
+c <- b[order(most_runs$INN),]
 c
-d <- c[order(comado$RUNS),]
+d <- c[order(-most_runs$SR),]
 d
+e <- d[order(-most_runs$X4S),]
+e
+f <- e[order(-most_runs$X4S),]
+f
+
+
