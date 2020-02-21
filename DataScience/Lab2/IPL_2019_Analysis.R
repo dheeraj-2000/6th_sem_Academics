@@ -183,18 +183,6 @@ e
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 ############### READIG FILE ###################################
 
 bowling_stats <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/bowling_stats.csv")
