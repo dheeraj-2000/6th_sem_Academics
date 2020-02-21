@@ -167,9 +167,9 @@ ggplot(venue_all,aes(x=city,y=matches,colour=city,fill=city))+
 
 most_runs <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/batting_stats.csv")
 head(most_runs)
-
 most_runs[order(most_runs[,1]),]
 
+############## Ordering According to Priority ################
 a <- most_runs[order(-most_runs$RUNS),]
 a
 b <- a[order(-most_runs$AVG),]
