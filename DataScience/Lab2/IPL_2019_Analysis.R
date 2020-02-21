@@ -181,8 +181,35 @@ d
 e <- d[order(-most_runs$X4S),]
 e
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ############### READIG FILE ###################################
 
 bowling_stats <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/bowling_stats.csv")
 head(bowling_stats)  
 bowling_stats[order(bowling_stats[,1]),]
+
+a <- bowling_stats[order(-bowling_stats$WKTS),]
+a
+b  <- a[order(bowling_stats$MATCHES),]
+b
+c <- b[order(-bowling_stats$BALLS),]
+c
+d <- c[order(bowling_stats$RUNS),]
+d
+
+
+
+
