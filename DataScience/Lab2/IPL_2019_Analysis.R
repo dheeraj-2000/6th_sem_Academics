@@ -214,7 +214,6 @@ select(head(e, n=10), PLAYER)
 select(head(e, n=10), PLAYER,INN, RUNS, AVG, SR ,X4S, X6S )
 
 
-
 ############### READIG FILE ###################################
 
 bowling_stats <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/bowling_stats.csv")
