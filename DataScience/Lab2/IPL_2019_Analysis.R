@@ -268,5 +268,8 @@ for (p in players) {
   rn = c(rn, sum (players_runs [which (players_runs$batsman == p), "batsman_runs"]))
 }
 
+player_runs = data.frame (player = plyr, runs = rn)
+player_runs
+
 
 
