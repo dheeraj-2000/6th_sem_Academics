@@ -271,8 +271,6 @@ for (p in players) {
 player_runs = data.frame (player = plyr, runs = rn)
 player_runs
 
-player_runs = player_runs [order (player_runs$runs,decreasing = T),]
-player_runs
 player_runs = player_runs [1:10,]
 
 par (mar = c (5,4.5,5,2))
