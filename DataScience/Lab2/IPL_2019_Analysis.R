@@ -258,5 +258,8 @@ select(head(e, n=10), PLAYER, MATCHES, BALLS, RUNS, WKTS )
 
 
 players_runs = data [, c ("batsman", "batsman_runs")]
+players = unique (players_runs$batsman)
+players
+
 
 
