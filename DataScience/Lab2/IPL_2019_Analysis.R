@@ -271,5 +271,6 @@ for (p in players) {
 player_runs = data.frame (player = plyr, runs = rn)
 player_runs
 
+player_runs = player_runs [order (player_runs$runs,decreasing = T),]
 
 
