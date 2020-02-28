@@ -261,5 +261,12 @@ players_runs = data [, c ("batsman", "batsman_runs")]
 players = unique (players_runs$batsman)
 players
 
+plyr = c()
+rn = c()
+for (p in players) {
+  plyr = c(plyr, p)
+  rn = c(rn, sum (players_runs [which (players_runs$batsman == p), "batsman_runs"]))
+}
+
 
 
