@@ -9,7 +9,7 @@ library(tidyr)
 matches <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/matches.csv", stringsAsFactors = FALSE)
 
 data <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/deliveries.csv", stringsAsFactors = FALSE)
-
+View(data)
 matches <- matches[,-18]
 data$wickets <- as.numeric(ifelse(data$player_dismissed =="" ,"",1))
 
@@ -256,5 +256,7 @@ select(head(e, n=10), PLAYER, MATCHES, BALLS, RUNS, WKTS )
 
 
 
+
+players_runs = data [, c ("batsman", "batsman_runs")]
 
 
