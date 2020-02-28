@@ -276,5 +276,6 @@ player_runs
 player_runs = player_runs [1:10,]
 
 par (mar = c (5,4.5,5,2))
+barplot (height = player_runs$runs, horiz = T , names.arg = factor (player_runs$player), las = 1, cex.names = 0.7, col = "blue4", xlim = c (0, 800))
 
 
