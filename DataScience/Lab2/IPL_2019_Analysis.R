@@ -256,27 +256,32 @@ select(head(e, n=10), PLAYER, MATCHES, BALLS, RUNS, WKTS )
 
 
 
-
-players_runs = data [, c ("match_id","batsman", "batsman_runs")]
+data1 <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/deliveries.csv", stringsAsFactors = FALSE)
+#View(data1)
+players_runs = data1 [, c ("match_id","batsman", "batsman_runs")]
 players = unique (players_runs$batsman)
-View(players)
+#View(players)
 match_id = unique (players_runs$match_id)
-View(match_id)
+#View(match_id)
 
 plyr = c()
 rn = c()
-match = c()
-i=11137
+#match = c()
+#i=11137
 #while(i <= match_id){
-if(match_id = 11137){
+#if(match_id = 11137){
+for (match in match_id){
 for (p in players) {
     plyr = c(plyr, p)
-    rn = c( rn, sum (players_runs [which (players_runs$batsman == p), "batsman_runs"]))
-}}
+    print(match)
+    rn = sum (players_runs [which (players_runs$match_id == match && ), "batsman_runs"])
+    print(rn)
+    }
 
-player_runs = data.frame (player = plyr, runs = rn)
+  }
+
+
 player_runs
-
 
 
 player_runs = player_runs [1:10,]
