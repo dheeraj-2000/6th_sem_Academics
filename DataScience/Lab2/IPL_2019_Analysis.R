@@ -313,19 +313,19 @@ sd(ind_ply$MSDhoni)/mean(ind_ply$MSDhoni)
 sd(ind_ply$ShaneWatson)/mean(ind_ply$ShaneWatson)
 
 
-############### PLOT 4: Box plot for David Warner
+############### PLOT 1: Box plot for David Warner
 boxplot(ind_ply$DavidWarner)
 num = as.numeric(ind_ply$DavidWarner)
 outvalues = boxplot(num)$out
 which(ind_ply$DavidWarner %in% outvalues) 
 
-############### PLOT 4: Box plot for LokeshRahul
+############### PLOT 2: Box plot for LokeshRahul
 boxplot(ind_ply$LokeshRahul)
 num = as.numeric(ind_ply$LokeshRahul)
 outvalues = boxplot(num)$out
 which(ind_ply$LokeshRahul %in% outvalues) 
 
-############### PLOT 4: Box plot for ShikharDhawan
+############### PLOT 3: Box plot for ShikharDhawan
 boxplot(ind_ply$ShikharDhawan)
 num = as.numeric(ind_ply$ShikharDhawan)
 outvalues = boxplot(num)$out
@@ -337,39 +337,54 @@ num = as.numeric(ind_ply$JonnyBairstow)
 outvalues = boxplot(num)$out
 which(ind_ply$JonnyBairstow %in% outvalues) 
 
-############### PLOT 4: Box plot for ShreyasIyer
+############### PLOT 5: Box plot for ShreyasIyer
 boxplot(ind_ply$ShreyasIyer)
 num = as.numeric(ind_ply$ShreyasIyer)
 outvalues = boxplot(num)$out
 which(ind_ply$ShreyasIyer %in% outvalues) 
 
-############### PLOT 4: Box plot for AjinkyaRahane
+############### PLOT 6: Box plot for AjinkyaRahane
 boxplot(ind_ply$AjinkyaRahane)
 num = as.numeric(ind_ply$AjinkyaRahane)
 outvalues = boxplot(num)$out
 which(ind_ply$AjinkyaRahane %in% outvalues) 
 
-############### PLOT 4: Box plot for QuintondeKock
+############### PLOT 7: Box plot for QuintondeKock
 boxplot(ind_ply$QuintondeKock)
 num = as.numeric(ind_ply$QuintondeKock)
 outvalues = boxplot(num)$out
 which(ind_ply$QuintondeKock %in% outvalues) 
 
-############### PLOT 4: Box plot for HardikPandya
+############### PLOT 8: Box plot for HardikPandya
 boxplot(ind_ply$HardikPandya)
 num = as.numeric(ind_ply$HardikPandya)
 outvalues = boxplot(num)$out
 which(ind_ply$HardikPandya %in% outvalues) 
 
-############### PLOT 4: Box plot for MSDhoni
+############### PLOT 9: Box plot for MSDhoni
 boxplot(ind_ply$MSDhoni)
 num = as.numeric(ind_ply$MSDhoni)
 outvalues = boxplot(num)$out
 which(ind_ply$MSDhoni %in% outvalues) 
 
-############### PLOT 4: Box plot for ShaneWatson
+############### PLOT 10: Box plot for ShaneWatson
 boxplot(ind_ply$ShaneWatson)
 num = as.numeric(ind_ply$ShaneWatson)
 outvalues = boxplot(num)$out
 which(ind_ply$ShaneWatson %in% outvalues) 
+
+######## corelation between Davidwarner and Lokesh rahul ############
+cor.test(ind_ply$DavidWarner, ind_ply$LokeshRahul,  method = "spearman")
+
+######## corelation between Davidwarner and Lokesh rahul ############
+cor.test(ind_ply$ShikharDhawan, ind_ply$JonnyBairstow,  method = "spearman")
+
+######## corelation between Davidwarner and Lokesh rahul ############
+cor.test(ind_ply$ShreyasIyer, ind_ply$AjinkyaRahane,  method = "spearman")
+
+######## corelation between Davidwarner and Lokesh rahul ############
+cor.test(ind_ply$QuintondeKock, ind_ply$HardikPandya,  method = "spearman")
+
+######## corelation between Davidwarner and Lokesh rahul ############
+cor.test(ind_ply$MSDhoni, ind_ply$ShaneWatson,  method = "spearman")
 
