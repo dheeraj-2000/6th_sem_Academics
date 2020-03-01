@@ -349,9 +349,27 @@ num = as.numeric(ind_ply$AjinkyaRahane)
 outvalues = boxplot(num)$out
 which(ind_ply$AjinkyaRahane %in% outvalues) 
 
-############### PLOT 4: Box plot for AjinkyaRahane
-boxplot(ind_ply$AjinkyaRahane)
-num = as.numeric(ind_ply$AjinkyaRahane)
+############### PLOT 4: Box plot for QuintondeKock
+boxplot(ind_ply$QuintondeKock)
+num = as.numeric(ind_ply$QuintondeKock)
 outvalues = boxplot(num)$out
-which(ind_ply$AjinkyaRahane %in% outvalues) 
+which(ind_ply$QuintondeKock %in% outvalues) 
+
+############### PLOT 4: Box plot for HardikPandya
+boxplot(ind_ply$HardikPandya)
+num = as.numeric(ind_ply$HardikPandya)
+outvalues = boxplot(num)$out
+which(ind_ply$HardikPandya %in% outvalues) 
+
+############### PLOT 4: Box plot for MSDhoni
+boxplot(ind_ply$MSDhoni)
+num = as.numeric(ind_ply$MSDhoni)
+outvalues = boxplot(num)$out
+which(ind_ply$MSDhoni %in% outvalues) 
+
+############### PLOT 4: Box plot for ShaneWatson
+boxplot(ind_ply$ShaneWatson)
+num = as.numeric(ind_ply$ShaneWatson)
+outvalues = boxplot(num)$out
+which(ind_ply$ShaneWatson %in% outvalues) 
 
