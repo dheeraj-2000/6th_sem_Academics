@@ -169,7 +169,7 @@ most_runs <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScien
 head(most_runs)
 
 ############## Ordering According to Priority ################
-a <- most_runs[order(-most_runs$RUNS),]
+a <- most_runs[order(-most_runs$INN),]
 a
 b <- a[order(-most_runs$AVG),]
 b
