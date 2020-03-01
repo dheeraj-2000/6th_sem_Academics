@@ -286,7 +286,7 @@ head(player_runs, n=1)
 
 
 
-##########################
+########  loading data of top 10 players and their individual 10 match score ######
 ind_ply <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/player_eachmatch.csv")
 View(ind_ply)
 median(ind_ply$DavidWarner)
