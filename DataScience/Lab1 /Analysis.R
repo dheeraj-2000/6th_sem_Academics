@@ -13,8 +13,8 @@ library(reshape2)
 #read_pdf
 #m <- tail(read_pdf, -11)
 #write.csv(m, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/new_data.csv")    #writing the extracted data into an csv file
-nw_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/new_data.csv")  #reading the csv file
-nw_read
+nw_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab1/new_data.csv")  #reading the csv file
+ nw_read
 nw_read$X <- NULL
 nw_read
 
