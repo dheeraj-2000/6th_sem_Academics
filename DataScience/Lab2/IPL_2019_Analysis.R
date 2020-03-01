@@ -255,7 +255,7 @@ select(head(e, n=10), PLAYER)
 select(head(e, n=10), PLAYER, MATCHES, BALLS, RUNS, WKTS )
 
 
-
+###############################
 data1 <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/deliveries1.csv", stringsAsFactors = FALSE)
 #View(data1)
 players_runs = data1 [, c ("match_id","batsman", "batsman_runs")]
@@ -274,7 +274,7 @@ for (match in match_id){
 for (p in players) {
     plyr = c(plyr, p)
     print(match)
-    rn = sum (players_runs [which (players_runs$match_id == match &&) , "batsman_runs"])
+  #  rn = sum (players_runs [which (players_runs$match_id == match &&) , "batsman_runs"])
    # print(rn)
     }
 }
@@ -285,4 +285,9 @@ barplot (height = player_runs$runs, horiz = T , names.arg = factor (player_runs$
 head(player_runs, n=1)
 
 
+
+##########################
+ind_ply <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/player_eachmatch.csv")
+View(ind_ply)
+median(ind_ply$DavidWarner)
 
