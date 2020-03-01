@@ -256,7 +256,7 @@ select(head(e, n=10), PLAYER, MATCHES, BALLS, RUNS, WKTS )
 
 
 
-data1 <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/deliveries.csv", stringsAsFactors = FALSE)
+data1 <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/deliveries1.csv", stringsAsFactors = FALSE)
 #View(data1)
 players_runs = data1 [, c ("match_id","batsman", "batsman_runs")]
 players = unique (players_runs$batsman)
@@ -274,19 +274,15 @@ for (match in match_id){
 for (p in players) {
     plyr = c(plyr, p)
     print(match)
-    rn = sum (players_runs [which (players_runs$match_id == match && ), "batsman_runs"])
-    print(rn)
+    rn = sum (players_runs [which (players_runs$match_id == match &&) , "batsman_runs"])
+   # print(rn)
     }
-
-  }
-
-
+}
 player_runs
-
-
 player_runs = player_runs [1:10,]
-
 par (mar = c (5,4.5,5,2))
 barplot (height = player_runs$runs, horiz = T , names.arg = factor (player_runs$player), las = 1, cex.names = 0.7, col = "blue4", xlim = c (0, 800))
-
 head(player_runs, n=1)
+
+
+
