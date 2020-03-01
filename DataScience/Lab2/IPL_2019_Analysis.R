@@ -285,7 +285,6 @@ barplot (height = player_runs$runs, horiz = T , names.arg = factor (player_runs$
 head(player_runs, n=1)
 
 
-
 ########  loading data of top 10 players and their individual 10 match score ######
 ind_ply <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/Lab2/player_eachmatch.csv")
 View(ind_ply)
@@ -299,4 +298,60 @@ median(ind_ply$QuintondeKock )
 median(ind_ply$HardikPandya)
 median(ind_ply$MSDhoni)
 median(ind_ply$ShaneWatson )
+
+
+######### Finding Coefficient of variance ###########
+sd(ind_ply$LokeshRahul)/mean(ind_ply$DavidWarner)
+sd(ind_ply$LokeshRahul)/mean(ind_ply$LokeshRahul)
+sd(ind_ply$ShikharDhawan)/mean(ind_ply$ShikharDhawan)
+sd(ind_ply$JonnyBairstow)/mean(ind_ply$JonnyBairstow)
+sd(ind_ply$ShreyasIyer)/mean(ind_ply$ShreyasIyer)
+sd(ind_ply$AjinkyaRahane)/mean(ind_ply$AjinkyaRahane)
+sd(ind_ply$QuintondeKock )/mean(ind_ply$QuintondeKock )
+sd(ind_ply$HardikPandya)/mean(ind_ply$HardikPandya)
+sd(ind_ply$MSDhoni)/mean(ind_ply$MSDhoni)
+sd(ind_ply$ShaneWatson)/mean(ind_ply$ShaneWatson)
+
+
+############### PLOT 4: Box plot for David Warner
+boxplot(ind_ply$DavidWarner)
+num = as.numeric(ind_ply$DavidWarner)
+outvalues = boxplot(num)$out
+which(ind_ply$DavidWarner %in% outvalues) 
+
+############### PLOT 4: Box plot for LokeshRahul
+boxplot(ind_ply$LokeshRahul)
+num = as.numeric(ind_ply$LokeshRahul)
+outvalues = boxplot(num)$out
+which(ind_ply$LokeshRahul %in% outvalues) 
+
+############### PLOT 4: Box plot for ShikharDhawan
+boxplot(ind_ply$ShikharDhawan)
+num = as.numeric(ind_ply$ShikharDhawan)
+outvalues = boxplot(num)$out
+which(ind_ply$ShikharDhawan %in% outvalues) 
+
+############### PLOT 4: Box plot for JonnyBairstow
+boxplot(ind_ply$JonnyBairstow)
+num = as.numeric(ind_ply$JonnyBairstow)
+outvalues = boxplot(num)$out
+which(ind_ply$JonnyBairstow %in% outvalues) 
+
+############### PLOT 4: Box plot for ShreyasIyer
+boxplot(ind_ply$ShreyasIyer)
+num = as.numeric(ind_ply$ShreyasIyer)
+outvalues = boxplot(num)$out
+which(ind_ply$ShreyasIyer %in% outvalues) 
+
+############### PLOT 4: Box plot for AjinkyaRahane
+boxplot(ind_ply$AjinkyaRahane)
+num = as.numeric(ind_ply$AjinkyaRahane)
+outvalues = boxplot(num)$out
+which(ind_ply$AjinkyaRahane %in% outvalues) 
+
+############### PLOT 4: Box plot for AjinkyaRahane
+boxplot(ind_ply$AjinkyaRahane)
+num = as.numeric(ind_ply$AjinkyaRahane)
+outvalues = boxplot(num)$out
+which(ind_ply$AjinkyaRahane %in% outvalues) 
 
