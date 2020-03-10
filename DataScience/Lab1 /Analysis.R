@@ -141,7 +141,7 @@ District_Rural <- as.data.frame(District_Rural)
 colnames(District_Rural) <- c("Districts","Birth_reg","Birth_rate","Death_reg","Death_rate","Reg_infant_death","Still_birth_reg","Still_birth_rate")
 District_Rural
 write.csv(District_Rural, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_rural.csv", row.names = FALSE)
-dist_rural_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/district_rural.csv")
+dist_rural_read <- read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/DataScience/lab1/district_rural.csv")
 dist_rural_read
 
 ############### PLOT 4: Box plot for visualizing registered infant death RuRAL District with OUTLIERS
