@@ -183,7 +183,7 @@
     return (G)
   }
   
- # calling functions
+ #calling functions
   G = add_foci_nodes(G)
   nodesize = get_size(G)
   labels = get_labels(G)
