@@ -35,6 +35,8 @@
     }
     return(nsl)
   }
+  
+  #get the label of the nodes
   get_labels <- function(G)
   {
     num = gorder(G)
