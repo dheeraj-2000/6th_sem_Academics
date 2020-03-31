@@ -36,6 +36,7 @@
     return(nsl)
   }
   
+  
   #get the label of the nodes
   get_labels <- function(G)
   {
@@ -51,6 +52,7 @@
     return(ll)
   }
   
+  #get the color of the nodes
   get_color <- function(G)
   {
     num = gorder(G)
