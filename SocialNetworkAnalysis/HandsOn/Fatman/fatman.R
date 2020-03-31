@@ -1,7 +1,9 @@
   library(igraph)
   
   
-  G <- make_empty_graph(100) %>% set_vertex_attr("name",value = as.integer(runif(100,15,40))) %>% set_vertex_attr("Type",value = "Person")
+  G <- make_empty_graph(100) %>% 
+    set_vertex_attr("name",value = as.integer(runif(100,15,40))) %>% 
+    set_vertex_attr("Type",value = "Person")
   
   #adding foci nodes
   add_foci_nodes <- function(G)
