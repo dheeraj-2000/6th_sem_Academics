@@ -72,6 +72,7 @@
     return(cl)
   }
   
+  
   get_person_nodes <- function()
   {
     num = gorder(G)
@@ -88,6 +89,7 @@
     return (p)
   }
   
+  #get foci nodes
   get_foci_nodes <- function()
   {
     num = gorder(G)
