@@ -178,10 +178,6 @@
       if (r < p)
       {
         G = G + edges(u,v)
-        fname = "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/HandsOn/Fatman/plot"
-        png(paste(fname, i, ".png", sep = ""),600, 600)
-        plot(G, layout= layout.grid, vertex.size = igraph::degree(g6)*3)
-        dev.off()
       }
     }
     return (G)
