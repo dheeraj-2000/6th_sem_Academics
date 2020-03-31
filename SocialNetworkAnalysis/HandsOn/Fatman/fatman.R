@@ -20,6 +20,8 @@
     return(G) 
   }
   
+  
+  #get the size of the nodes
   get_size <- function(G)
   {
     num = gorder(G)
