@@ -189,7 +189,7 @@
   color_arr = get_color(G)
   G = add_foci_edges(G)
 
-  #plotting graph
+  #plotting graphs
   plot(G,vertex.label = labels,vertex.size=as.integer(nodesize),vertex.label.font = 0.01,
        rescale = FALSE, ylim=c(-4,12),xlim=c(-4,12), asp = 0,layout = layout.kamada.kawai,
        vertex.color = color_arr,edge.arrow.size = 0.1)
