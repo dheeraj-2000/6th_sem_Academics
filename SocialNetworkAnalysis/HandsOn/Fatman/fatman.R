@@ -149,6 +149,8 @@
     nu = neighbors(G,u)
     return (length(intersect(nv,nu)))
   }
+  
+  #finding closures
   closures <- function(G)
   {
     arr <- c()
