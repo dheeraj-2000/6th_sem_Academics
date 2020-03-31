@@ -117,6 +117,7 @@
     return(G)
   }
   
+  #finding homophily
   homophily <-function(G)
   { i =0
     pnodes = get_person_nodes()
