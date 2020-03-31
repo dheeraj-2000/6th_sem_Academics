@@ -61,11 +61,11 @@
     {
       if(V(G)[i]$Type == "Person")
         if(V(G)[i]$name == 15)
-          cl <- c(cl,"green")
+          cl <- c(cl,"orange")
         else if(V(G)[i]$name == 39)
           cl <- c(cl,"yellow")
         else
-          cl <- c(cl,"orange")
+          cl <- c(cl,"green")
       else
         cl <- c(cl,"red")
     }
