@@ -1,4 +1,5 @@
 library (igraph)
+library(ggplot2)
 
 
 #####################################################Bucketing
@@ -11,9 +12,7 @@ c = coreness(g)
 v = length(V(g))
 i = 1
 buckets <- list()
-while(v>0)
-
-  {
+while(v>0){
   
   if (it %in% c)
   {
@@ -24,7 +23,7 @@ while(v>0)
     #print("v is ")
     print(length(V(g)[which(coreness(g)==it)]))
     i=i+1
-    gplot(nw_read,aes(x = year,y = event_Reg_LBirth))
+    gplot(aes(x = it,y = length(V(g)[which(coreness(g)==it)])))
   }
   it = it+1
 }
