@@ -1,6 +1,8 @@
 library (igraph)
 
 #####################################################Bucketing
+g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/karate.gml", format = "gml")
+plot(g, layout = layout.kamada.kawai)
 it = 1
 c = coreness(g)
 v = length(V(g))
@@ -35,7 +37,7 @@ sampleWithoutSurprises <- function(x) {
 
 ##################################################################
 
-g = read_graph ("/home/samroadie/Desktop/sna_project/karate.gml", format = "gml")
+g = read_graph ("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/karate.gml", format = "gml")
 plot(g, layout = layout.kamada.kawai)
 #################################################### SHELL BASED HILL CLIMBING APPROACh
 V(g)$core = coreness(g) 
@@ -71,6 +73,7 @@ V(g)$core = coreness(g)
 V(g)$visited  = FALSE
 numsteps = 0
 current = sampleWithoutSurprises(buckets[[1]])
+
 V(g)$visited[current] = TRUE
 while (!current %in% buckets[[length(buckets)]]) {
   print(current)
