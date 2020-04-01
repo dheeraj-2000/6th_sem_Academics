@@ -1,5 +1,9 @@
 library (igraph)
 library(ggplot2)
+library(tabulizer)
+library(dplyr)
+library(ggplot2)
+library(reshape2)
 
 
 #####################################################Bucketing
@@ -10,6 +14,8 @@ length(V(g))
 it = 1
 c = coreness(g)
 v = length(V(g))
+nodes  = c()
+shellno = c()
 i = 1
 buckets <- list()
 while(v>0){
@@ -22,12 +28,15 @@ while(v>0){
     v = v - length(V(g)[which(coreness(g)==it)])
     #print("v is ")
     print(length(V(g)[which(coreness(g)==it)]))
+    nodes = c(nodes, length(V(g)[which(coreness(g)==it)]) )
+   # write.csv(length(V(g)[which(coreness(g)==it)]), "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/nodes.csv" , append = T)
     i=i+1
-    gplot(aes(x = it,y = length(V(g)[which(coreness(g)==it)])))
+   #ggplot(x = it,y = length(V(g)[which(coreness(g)==it)]))
   }
   it = it+1
 }
-
+#ggplot(aes(x = it,y = length(V(g)[which(coreness(g)==it)])))
+nodes
 print(buckets)
 
 
