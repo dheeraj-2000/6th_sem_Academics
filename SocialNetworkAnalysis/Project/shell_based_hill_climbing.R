@@ -1,0 +1,102 @@
+library (igraph)
+
+#####################################################Bucketing
+it = 1
+c = coreness(g)
+v = length(V(g))
+i = 1
+buckets <- list()
+while(v>0)
+{
+  
+  if (it %in% c)
+  {
+    tempo = c()
+    tempo = c(tempo,V(g)[which(coreness(g)==it)])
+    buckets[[i]] = tempo
+    v = v - length(V(g)[which(coreness(g)==it)])
+    print("v is ")
+    print(v)
+    i=i+1
+  }
+  it = it+1
+}
+
+print(buckets)
+############################################################# Random  Number Generation
+sampleWithoutSurprises <- function(x) {
+       if (length(x) <= 1) {
+             return(x)
+         } else {
+               return(sample(x,1))
+           }
+   }
+
+
+##################################################################
+
+g = read_graph ("/home/samroadie/Desktop/sna_project/karate.gml", format = "gml")
+plot(g, layout = layout.kamada.kawai)
+#################################################### SHELL BASED HILL CLIMBING APPROACh
+V(g)$core = coreness(g) 
+V(g)$visited  = FALSE
+numsteps = 0
+current <- sampleWithoutSurprises(buckets[[1]])
+print(current)
+V(g)$visited[current] = TRUE
+while (!current %in% buckets[[length(buckets)]]) {
+  
+  print(current)
+  print(V(g))
+  v1 = sampleWithoutSurprises(intersect(neighbors(g,current)[which(V(g)$core[neighbors(g,current)] == max(V(g)$core[neighbors(g,current)]))] , V(g)[which(V(g)$visited == FALSE)] ))
+  
+  
+  if(V(g)$core[v1] <= V(g)$core[current]){
+    v2 = sampleWithoutSurprises(intersect(neighbors(g,current),V(g)[which(V(g)$visited == FALSE)]))
+    current = v2
+  }
+  
+  else{
+    current = v1
+  }
+  numsteps = numsteps + 1
+  
+}
+print(numsteps)
+
+###########################################Intershell Hill Climbing with Intrashell Degree Based Approach(SA)
+
+
+V(g)$core = coreness(g) 
+V(g)$visited  = FALSE
+numsteps = 0
+current = sampleWithoutSurprises(buckets[[1]])
+V(g)$visited[current] = TRUE
+while (!current %in% buckets[[length(buckets)]]) {
+  print(current)
+  v1 = sampleWithoutSurprises(intersect(neighbors(g,current)[which(V(g)$core[neighbors(g,current)] == max(V(g)$core[neighbors(g,current)]))] , V(g)[which(V(g)$visited == FALSE)] ))
+  
+  if(V(g)$core[v1] <= V(g)$core[current]){
+    v2 = sampleWithoutSurprises(intersect(neighbors(g,current)[which(degree(g)[neighbors(g,current)] == max(degree(g)[neighbors(g,current)]))],V(g)[which(V(g)$visited == FALSE)]))
+    current = v2
+  }
+  
+  else{
+    current = v1
+  }
+  numsteps = numsteps + 1
+  
+}
+print(numsteps)
+#######################################################################################################################################
+
+
+
+
+
+
+
+
+
+
+
