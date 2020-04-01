@@ -1,15 +1,19 @@
 library (igraph)
 
+
 #####################################################Bucketing
-g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/karate.gml", format = "gml")
-plot(g, layout = layout.kamada.kawai)
+G = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/facebook_combined1.txt", format = "edgelist", directed = F)
+g = G - V(G)[which(degree(G)==0)]
+length(V(g))
+#plot(g, layout = layout.kamada.kawai)
 it = 1
 c = coreness(g)
 v = length(V(g))
 i = 1
 buckets <- list()
 while(v>0)
-{
+
+  {
   
   if (it %in% c)
   {
@@ -17,14 +21,34 @@ while(v>0)
     tempo = c(tempo,V(g)[which(coreness(g)==it)])
     buckets[[i]] = tempo
     v = v - length(V(g)[which(coreness(g)==it)])
-    print("v is ")
-    print(v)
+    #print("v is ")
+    print(length(V(g)[which(coreness(g)==it)]))
     i=i+1
+    gplot(nw_read,aes(x = year,y = event_Reg_LBirth))
   }
   it = it+1
 }
 
 print(buckets)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ############################################################# Random  Number Generation
 sampleWithoutSurprises <- function(x) {
        if (length(x) <= 1) {
