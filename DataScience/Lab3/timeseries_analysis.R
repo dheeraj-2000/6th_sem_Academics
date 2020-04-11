@@ -37,7 +37,6 @@ legend("topleft", colnames(EuStockMarkets), lty = 1, col = 1:4, bty = "n")
 ####time series object
 
 
-
 time_series <- ts(UKDriverDeaths, start=1969 ,frequency = 12)
 time_series
 is.ts(time_series)
