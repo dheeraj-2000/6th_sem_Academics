@@ -1,7 +1,8 @@
 data("Nile")
 Nile
 data("EuStockMarkets")
-EuStockMarkets
+View(EuStockMarkets)
+
 
 length(Nile)
 length(EuStockMarkets)
