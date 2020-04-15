@@ -29,8 +29,8 @@ frequency(Nile)
 frequency(EuStockMarkets)
 start(EuStockMarkets)
 
-data("sunspot.month")
-sunspot.month
+data("UKDriverDeaths")
+UKDriverDeaths
 #plot
 ts.plot(EuStockMarkets, col = 1:4, xlab = "Year", ylab = "Index Value", main = "Major European Stock Indices, 1991-1998")
 
