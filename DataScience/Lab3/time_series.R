@@ -116,3 +116,11 @@ act_value = tail(time_series1,18)
 rmse(act_value,p_values)
 # SINCE RMSE LESS HENCE IMPROVED
 
+
+#Q13 - ARIMA MODEL - 75% train
+
+train <- window(mdeaths,start = c(1974,1) ,end=c(1978,6))
+train
+model = auto.arima(train)
+model
+
