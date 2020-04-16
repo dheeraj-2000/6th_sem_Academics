@@ -80,16 +80,21 @@ autoplot(fchw)
 
 #Q10 PLOT predicted and actual values
 
-act_value = tail(time_series,48)
+act_value = tail(time_series,18)
 
 
 
-df = data.frame( fchw , tail(time_series,48))
+df = data.frame( fchw , tail(time_series,18))
 
 
 X = time(act_value)
-dfplt = as.data.frame(data.frame(df$Point.Forecast,df$tail.time_series..48.))
+dfplt = as.data.frame(data.frame(df$Point.Forecast,df$tail.time_series..18.))
 ggplot(dfplt,aes(X))+
   geom_line(aes(y=dfplt$df.Point.Forecast),colour = "blue")+
-  geom_line(aes(y=dfplt$df.tail.time_series..48.),colour = "black") + xlab("Time") + ylab("Deaths") + 
+  geom_line(aes(y=dfplt$df.tail.time_series..18.),colour = "black") + xlab("Time") + ylab("Deaths") + 
   ggtitle("Predicted(blue) and actual (black) values graph")
+
+
+#Q11 - RMS(predicted,actual)
+
+rmse(df$Point.Forecast,df$tail.time_series..18.)
