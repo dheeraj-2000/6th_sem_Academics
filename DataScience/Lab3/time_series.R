@@ -49,4 +49,4 @@ plot(stlts)
 stlts$trend <- stlts$time.series[,2]
 plot(stlts$trend)
 
-data()
+
