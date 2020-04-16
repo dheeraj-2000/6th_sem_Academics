@@ -30,3 +30,7 @@ ts.plot(time_series, main="Sunspot",ylab ="Monthly Total mean Sunspot number")
 abline(reg = lm(time_series~time(time_series)),col="green")
 
 #This property can stabilize variability when a series exhibits increasing variability over time. It may also be used to linearize a rapid growth pattern over time
+
+#Q3  -  Monthly mean values
+
+plot(aggregate(time_series,FUN = mean))
