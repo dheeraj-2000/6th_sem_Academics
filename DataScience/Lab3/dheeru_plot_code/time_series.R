@@ -84,19 +84,25 @@ autoplot(fchw)
 act_value = tail(time_series1,18)
 
 df = data.frame( fchw , tail(time_series1,18))
+df
 
 
 X = time(act_value)
-dfplt = as.data.frame(data.frame(df$Point.Forecast,df$tail.time_series..18.))
+fore = df$Point.Forecast
+actu = df$tail.time_series1..18.
+fore
+actu
+dfplt = as.data.frame(data.frame(fore,actu))
+dfplt
 ggplot(dfplt,aes(X))+
-  geom_line(aes(y=dfplt$df.Point.Forecast),colour = "blue")+
-  geom_line(aes(y=dfplt$df.tail.time_series..18.),colour = "black") + xlab("Time") + ylab("Deaths") + 
+  geom_line(aes(y=dfplt$fore),colour = "blue")+
+  geom_line(aes(y=dfplt$actu),colour = "black") + xlab("Time") + ylab("Deaths") + 
   ggtitle("Predicted(blue) and actual (black) values graph")
 
 
 #Q11 - RMS(predicted,actual)
-
-rmse(df$Point.Forecast,df$tail.time_series..18.)
+df
+rmse(df$Point.Forecast,df$tail.time_series1..18.)
 
 ####### OOUTPUT
 
@@ -109,7 +115,7 @@ rmse(df$Point.Forecast,df$tail.time_series..18.)
 
 #improved
 
-hw_modelt <- HoltWinters(train,alpha = "0.22" ,beta = "0.32" ,gamma = "0.82" )
+hw_modelt <- HoltWinters(train,alpha = "0.1" ,beta = "0.1" ,gamma = "0.4" )
 
 
 model.predict <- predict(hw_modelt,n.ahead = 18)
@@ -158,9 +164,8 @@ ggplot(arima_df,aes(X))+
 
 
 # Q16 -  RMSE
-#TWO WAYS TO FIND
 rmse(arima_act_values,predicted$Point.Forecast)
-forecast::accuracy(p,mdeaths)[,'RMSE']
+
 
 
 
