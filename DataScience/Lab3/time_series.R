@@ -65,7 +65,7 @@ plot(stlts$seasonal)
 
 stlts$residue <- (time_series1 -(stlts$trend + stlts$seasona))
 
-#plot(stlts$residue,main = "Residue after removing trend and seasonality",col = "blue")
+plot(stlts$residue,main = "Residue after removing trend and seasonality",col = "blue")
 
 
 
