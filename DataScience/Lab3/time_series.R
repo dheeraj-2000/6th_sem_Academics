@@ -142,3 +142,8 @@ ggplot(arima_df,aes(X))+
   geom_line(aes(y=predicted$Point.Forecast),colour="green")+
   geom_line(aes(y=arima_act_values),colour = "black") + xlab("Time") + ylab("Deaths")+
   ggtitle("Predicted(green) and actual (black) values graph")
+
+# Q16 -  RMSE
+#TWO WAYS TO FIND
+rmse(arima_act_values,predicted$Point.Forecast)
+forecast::accuracy(p,mdeaths)[,'RMSE']
