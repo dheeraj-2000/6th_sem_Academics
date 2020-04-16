@@ -98,3 +98,21 @@ ggplot(dfplt,aes(X))+
 #Q11 - RMS(predicted,actual)
 
 rmse(df$Point.Forecast,df$tail.time_series..18.)
+
+
+#Q12  - Tuning Model
+
+#improved
+
+hw_modelt <- HoltWinters(train,alpha = "0.22" ,beta = "0.32" ,gamma = "0.82" )
+
+
+model.predict <- predict(hw_modelt,n.ahead = 18)
+round(model.predict)
+p_values= model.predict
+
+act_value = tail(time_series1,18)
+
+rmse(act_value,p_values)
+# SINCE RMSE LESS HENCE IMPROVED
+
