@@ -38,3 +38,13 @@ plot(aggregate(time_series,FUN = mean))
 #Q4 -  Boxplot Monthly
 
 boxplot(time_series~cycle(time_series),xlab="Month",ylab = "Sunspot Number",main = "Sunspot")
+
+#Q5 - decompose using stl and find TREND
+
+
+stlts <- stl(time_series, s.window = "periodic")
+plot(stlts)
+
+
+stlts$trend <- stlts$time.series[,3]
+plot(stlts$trend)
