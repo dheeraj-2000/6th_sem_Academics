@@ -148,6 +148,7 @@ ggplot(arima_df,aes(X))+
 rmse(arima_act_values,predicted$Point.Forecast)
 forecast::accuracy(p,mdeaths)[,'RMSE']
 
+# Q19 Cleaning data
 tscl <- tsclean(time_series1)
 modelcl <- HoltWinters(tscl)
 model_without_cleaning <- HoltWinters(time_series1)
