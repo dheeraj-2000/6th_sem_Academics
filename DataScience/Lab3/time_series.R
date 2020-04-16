@@ -124,3 +124,12 @@ train
 model = auto.arima(train)
 model
 
+
+
+# Q14 - Predict for next 25% data 
+p <- forecast(model, h = 18)
+p
+plot(mdeaths)
+plot(p)
+predicted = data.frame(p)
+arima_act_values = tail(time_series1,18)
