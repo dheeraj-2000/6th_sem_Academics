@@ -133,3 +133,12 @@ plot(mdeaths)
 plot(p)
 predicted = data.frame(p)
 arima_act_values = tail(time_series1,18)
+
+#Q15 Plotting predicted and actual
+X = time(arima_act_values)
+arima_df <- as.data.frame(data.frame(X,predicted$Point.Forecast,arima_act_values))
+
+ggplot(arima_df,aes(X))+
+  geom_line(aes(y=predicted$Point.Forecast),colour="green")+
+  geom_line(aes(y=arima_act_values),colour = "black") + xlab("Time") + ylab("Deaths")+
+  ggtitle("Predicted(green) and actual (black) values graph")
