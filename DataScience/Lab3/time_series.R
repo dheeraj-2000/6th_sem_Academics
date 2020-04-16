@@ -34,3 +34,7 @@ abline(reg = lm(time_series~time(time_series)),col="green")
 #Q3  -  Monthly mean values
 
 plot(aggregate(time_series,FUN = mean))
+
+#Q4 -  Boxplot Monthly
+
+boxplot(time_series~cycle(time_series),xlab="Month",ylab = "Sunspot Number",main = "Sunspot")
