@@ -13,11 +13,11 @@ mdeaths
 
 
 #start end time frequency cycle - The deltat() function returns the fixed time interval between observations and the frequency() function returns the number of observations per unit time. Finally, the cycle() function returns the position in the cycle of each observation
-start(sunspot.month)
-end(sunspot.month)
-time(sunspot.month)
-cycle(sunspot.month)
-deltat(sunspot.month)
+start(mdeaths)
+end(mdeaths)
+time(mdeaths)
+cycle(mdeaths)
+deltat(mdeaths)
 
 
 ####time series object
@@ -26,8 +26,8 @@ time_series1 <- ts(mdeaths, start=1974 ,frequency = 12)
 time_series1
 #check whether it is a ts object
 is.ts(time_series1)
-ts.plot(time_series1, main="Sunspot",ylab ="Monthly Total mean Sunspot number")
-abline(reg = lm(time_series1~time(time_series)1),col="green")
+ts.plot(time_series1, main="Deaths From lung disease",ylab ="Monthly Total mean Deaths")
+abline(reg = lm(time_series1~time(time_series1)),col="green")
 
 #This property can stabilize variability when a series exhibits increasing variability over time. It may also be used to linearize a rapid growth pattern over time
 
@@ -37,7 +37,7 @@ plot(aggregate(time_series1,FUN = mean))
 
 #Q4 -  Boxplot Monthly
 
-boxplot(time_series1~cycle(time_series1),xlab="Month",ylab = "Sunspot Number",main = "Sunspot")
+boxplot(time_series1~cycle(time_series1),xlab="Month",ylab = "Deaths",main = "Death from lung disease")
 
 #Q5 - decompose using stl and find TREND
 
@@ -57,4 +57,12 @@ plot(stlts$trend)
 stlts$seasonal <- stlts$time.series[,1]
 plot(stlts$seasonal)
 
+# Yearly  quite uniform patterns
+
+#Q7 Residuals 
+
+
+stlts$residue <- (time_series -(stlts$trend + stlts$seasona))
+
+plot(stlts$residue,main = "Residue after removing trend and seasonality",col = "blue")
 
