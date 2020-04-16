@@ -147,3 +147,11 @@ ggplot(arima_df,aes(X))+
 #TWO WAYS TO FIND
 rmse(arima_act_values,predicted$Point.Forecast)
 forecast::accuracy(p,mdeaths)[,'RMSE']
+
+tscl <- tsclean(time_series1)
+modelcl <- HoltWinters(tscl)
+model_without_cleaning <- HoltWinters(time_series1)
+plot(model_without_cleaning, main = "Original with Fitted time series : Raw Data")
+plot(modelcl, main = "Original with Fitted time series : Cleaned Data")
+modelcl$SSE
+model_without_cleaning$SSE
