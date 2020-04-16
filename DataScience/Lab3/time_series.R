@@ -20,5 +20,13 @@ cycle(sunspot.month)
 deltat(sunspot.month)
 
 
+####time series object
 
+time_series <- ts(sunspot.month, start=1749 ,frequency = 12)
+#time_series
+#check whether it is a ts object
+is.ts(time_series)
+ts.plot(time_series, main="Sunspot",ylab ="Monthly Total mean Sunspot number")
+abline(reg = lm(time_series~time(time_series)),col="green")
 
+#This property can stabilize variability when a series exhibits increasing variability over time. It may also be used to linearize a rapid growth pattern over time
