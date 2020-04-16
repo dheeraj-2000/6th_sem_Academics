@@ -59,10 +59,37 @@ plot(stlts$seasonal)
 
 # Yearly  quite uniform patterns
 
+
 #Q7 Residuals 
 
 
-stlts$residue <- (time_series -(stlts$trend + stlts$seasona))
+stlts$residue <- (time_series1 -(stlts$trend + stlts$seasona))
 
 plot(stlts$residue,main = "Residue after removing trend and seasonality",col = "blue")
 
+
+
+#Q8 & Q9 75% trained holtwinter model and predicting 25%
+
+train <- window(mdeaths,start = c(1974,1) ,end=c(1978,6))
+train
+# here train data for 75% and test is 25% that is 48 months , fchw is prediction , summary give whole detail about model ,rms values ,traindata ,testdata ,alpha,beta,gammavalues
+fchw <- hw(train, seasonal = "additive", h = 18)
+summary(fchw)
+autoplot(fchw)
+
+#Q10 PLOT predicted and actual values
+
+act_value = tail(time_series,48)
+
+
+
+df = data.frame( fchw , tail(time_series,48))
+
+
+X = time(act_value)
+dfplt = as.data.frame(data.frame(df$Point.Forecast,df$tail.time_series..48.))
+ggplot(dfplt,aes(X))+
+  geom_line(aes(y=dfplt$df.Point.Forecast),colour = "blue")+
+  geom_line(aes(y=dfplt$df.tail.time_series..48.),colour = "black") + xlab("Time") + ylab("Deaths") + 
+  ggtitle("Predicted(blue) and actual (black) values graph")
