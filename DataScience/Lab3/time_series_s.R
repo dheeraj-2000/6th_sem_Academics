@@ -9,9 +9,9 @@ sunspot.month
 
 ####time series object
 
-time_series <- ts(sunspot.month, start=1974 ,frequency = 12)
+time_series1 <- ts(sunspot.month, start=1974 ,frequency = 12)
 time_series1
-
+plot(time_series1)
 
 #This property can stabilize variability when a series exhibits increasing variability over time. It may also be used to linearize a rapid growth pattern over time
 
@@ -100,11 +100,7 @@ ggplot(arima_df,aes(X))+
 
 forecast::accuracy(p,mdeaths)[,'RMSE']
 
-
-
-
-
-# Q19 Cleaning data
+# Cleaning data
 tscl <- tsclean(time_series1)
 modelcl <- HoltWinters(tscl)
 model_without_cleaning <- HoltWinters(time_series1)
