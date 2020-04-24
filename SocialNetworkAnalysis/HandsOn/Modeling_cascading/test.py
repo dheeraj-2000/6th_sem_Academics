@@ -1,7 +1,3 @@
-#import igraph
-#from igraph import *
-import matplotlib.pyplot as plt
-import networkx as nx
 t = int(input('Enter Number of Test cases: '))
 #g = nx.erdos_renyi_graph(20, 0.5)
 
@@ -17,19 +13,17 @@ while(t):
     b = int(input('Enter PAYOFF for Initial bahaviour: '))
     a = int(input('Enter PAYOFF for New bahaviour: '))
 
-    def col_list(g):
-        infected_seed=[]
-        for each in g.nodes():
-            if g.nodes[each]['behaviour']=='initial_behaviour':
-                infected_seed.append('yellow')
-            else:
-                infected_seed.append('green')
-        return infected_seed
-
-    def find_neigh(each, c, g):
+    def cal_adopted_initial_beahaviour(each, type_of_behaviour, g):
         num=0
         for each1 in g.neighbors(each):
-            if g.nodes[each1]['behaviour']==c:
+            if g.nodes[each1]['behaviour']=='initial_behaviour':
+                num=num+1
+        return num
+
+    def cal_adopted_new_beahaviour(each, type_of_behaviour, g):
+        num=0
+        for each1 in g.neighbors(each):
+            if g.nodes[each1]['behaviour']==type_of_behaviour:
                 num=num+1
         return num
 
@@ -43,20 +37,9 @@ while(t):
        # a = int(input('Enter payoff for new bahaviour: '))
         #b = int(input('Enter payoff for initial bahaviour: '))
         for each in g.nodes():
-            num_A = 0
-            num_A = find_neigh(each, 'new_behaviour', g)
-            num_B = find_neigh(each, 'initial_behaviour', g)
-            # for each1 in g.neighbors(each):
-            #     if g.nodes[each1]['behaviour']=='new_behaviour':
-            #         num_A=num_A+1
-            # return num_A
-            #
-            # for each1 in g.neighbors(each):
-            #     num_B = 0
-            #     if g.nodes[each1]['behaviour']=='initial_behaviour':
-            #         num_B=num_B+1
-            # return num_B
-
+#             num_A = 0
+            num_A = cal_adopted_new_beahaviour(each, 'new_behaviour', g)
+            num_B = cal_adopted_initial_beahaviour(each, 'initial_behaviour', g)
             payoff_A=a*num_A
             payoff_B=b*num_B
             if payoff_A >= payoff_B:
@@ -65,14 +48,10 @@ while(t):
                 dict1[each]= 'initial_behaviour'
         return dict1
 
-    def reset_node_attributes(g, behaviour_di):
-        for each in behaviour_di:
-            g.nodes[each]['behaviour']= behaviour_di[each]
-
-    def terminate_1(c, g):
+    def terminate_1(type_of_behaviour, g):
         f=1
         for each in g.nodes():
-            if g.nodes[each]['behaviour']!=c:
+            if g.nodes[each]['behaviour']!=type_of_behaviour:
                 f=0
                 break
         return f
@@ -88,13 +67,13 @@ while(t):
 
 
 
-    for u in g.nodes():
-        for v in g.nodes():
-            if u<v:
-                print(u,v, ':')
+    for seed_node1 in g.nodes():
+        for seed_node2 in g.nodes():
+            if seed_node1<seed_node2:
+                print(seed_node1,seed_node2, ':')
                 infected_seed = []
-                infected_seed.append(u)
-                infected_seed.append(v)
+                infected_seed.append(seed_node1)
+                infected_seed.append(seed_node2)
 
 
                 external_behaviour = "new_behaviour"
@@ -114,16 +93,17 @@ while(t):
                         break
                     count = count+1
                     behaviour_di  = recalculate_options(g)
-                    reset_node_attributes(g, behaviour_di)
-                    colors = col_list(g)
+                    for each in behaviour_di:
+                        g.nodes[each]['behaviour']= behaviour_di[each]
 
-                c =terminate_1('new_behaviour', g)
-                if c==1:
+                val =terminate_1('new_behaviour', g)
+                if val==1:
                     print('cascade complete with size: ', len(g))
                 else:
-                    print('cascade incomplete')
-#                     count =0
-#                     for i in g.nodes():
-#                         if(g.nodes[each]['behaviour'] == "new_behaviour"):
-#                             count = count +1
-#                     print(count)
+                    count =0
+                    for i in g.nodes():
+                        if(g.nodes[i]['behaviour'] == "new_behaviour"):
+                            count = count +1
+                    print('For the provided initial seed input for new bahaviour the cascade is INCOMPLETE ( with cascading size of: ', count,')')
+    print('\n\n')
+    t = t-1
