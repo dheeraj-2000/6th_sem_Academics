@@ -17,7 +17,10 @@ field_2_Sample_MEAN <- 20.3
 
 # calculating the Z-statistic at 5% LOS (i.e, Tabulated value is 1.96)
 
-Z_Calculated <- (field_1_Sample_MEAN - field_2_Sample_MEAN) / 
-  sqrt(StandDeviation_1*StandDeviation_1 / field_1_Sample_Size + StandDeviation_2 / field_2_Sample_MEAN)
+Z_Calculated <- (field_2_Sample_MEAN - field_1_Sample_MEAN) / 
+  sqrt((StandDeviation_1^2/ field_1_Sample_Size) + (StandDeviation_2^2 / field_2_Sample_Size))
 
 Z_Calculated
+## SINCE we got calculated value as 8.57 which is greater than tabulated So reject Null Hypothesis that means both the fields have significant difference
+
+
