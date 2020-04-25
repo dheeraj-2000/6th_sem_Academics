@@ -6,7 +6,8 @@ library(dplyr)
 ##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 35  #####
 
 
-#
+# There is no significant difference between the means of two paddy fields
+
 # Given DATA for Field No 1
 
 field_1_Sample_Size <- 60
@@ -26,6 +27,8 @@ Z_Calculated <- (field_2_Sample_MEAN - field_1_Sample_MEAN) /
 
 Z_Calculated
 ## SINCE we got calculated value as 8.57 which is greater than tabulated value(1.96) So reject Null Hypothesis that means both the fields have significant difference
+
+
 
 
 
