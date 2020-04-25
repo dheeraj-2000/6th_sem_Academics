@@ -86,8 +86,8 @@ group_by(my_data, Types_of_irrigation) %>%
 res.ftest <- var.test(Tap_water, Saline_water)
 res.ftest
 
-#### So in the output we can see that calculated value(1.78) is less than tabulate value(which is 3.23) So accept the null Hypothesis 
-
+## So in the output we can see that calculated value(1.78) is less than tabulate value(which is 3.23) So accept the null Hypothesis 
+##hence we conclude that the variances of the two systems of irrigation are homogeneous
 
 
 
@@ -103,3 +103,6 @@ dimnames(M) <- list(Flowe_color = c("White_Flower", "Red_Flower"),
 Xsq$observed   # observed counts (same as M)
 Xsq$expected   # expected counts under the null
 
+## So we can see in the output as Calulated value is (0.20) which ia less than tabulated value (3.84) at 5% LOS. Null hypothesis is
+##accepted and hence we conclude that two characters, flower colour and shape of leaf are
+##independent of each other
