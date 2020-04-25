@@ -77,7 +77,7 @@ ic <- function(g,s){
 s <- c()
 pow <- c()
 #yahan 1 ki jagah 16 kardena
-for( l in 16:length(buckets)){
+for( l in 21:length(buckets)){
   s <- c(s,l)
   print(l)
   inspow <- c()
@@ -100,7 +100,7 @@ for( l in 16:length(buckets)){
 length(pow)
 #yeh tum lena 
 #jahan tak loop chala us se ek kam n ki value
-sm <-s[1:5]
+sm <-s[1:n]
 df <- cbind(sm, pow)
 df <- as.data.frame(df)
 library(ggplot2)
