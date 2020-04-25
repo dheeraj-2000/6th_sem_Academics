@@ -1,6 +1,6 @@
 library(dplyr)
 
-################# Two sample Z-Test for Test of significant in difference of means ###############
+################# Two sample Z-Test for Test of significant in difference between means ###############
 #### Here Given values are MEAN, SSAMPLE SIZE and STANDARD DEVIATION of Both Samples #############
 
 ##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 35  #####
@@ -27,7 +27,7 @@ Z_Calculated
 
 
 
-################# Two sample T-Test for Test of significant in difference of means ###############
+################# Two sample T-Test for Test of significant in difference between means ###############
 #### Here Given values are Potato Plant yield Tubes fro two different varieties #############
 
 ##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 41  #####
@@ -44,4 +44,44 @@ my_data <- data.frame(
 )
 
 my_data
+
+group_by(my_data, Types) %>%
+summarise(
+  sample_size = n(),
+  sample_mean = mean(num_tubes, na.rm = TRUE),
+  sample_sd = sd(num_tubes, na.rm = TRUE)
+)
+
+t.test(Variety_1, Variety_2)
+
+#### So in the output we can see thsere is difference between the tubes value of both the varieties 
+
+
+
+################# Two sample F-Test for Test of significant in difference between means ###############
+####  Given values are two types of water to irrigate the gram plants #############
+
+##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 45  #####
+
+
+## Given Data is
+Variety_1 <- c(2.2, 2.5, 1.9, 2.6, 2.6, 2.3, 1.8, 2.0, 2.1, 2.4, 2.3)
+Variety_2 <- c(2.8, 2.5, 2.7, 3.0, 3.1, 2.3, 2.4, 3.2, 2.5, 2.9)
+
+# Create a data frame for the above both variety
+my_data <- data.frame( 
+  Types=c(rep("Variety_1",11),rep("Variety_2",10)),
+  num_tubes = c(Variety_1,  Variety_2)
+)
+
+my_data
+
+group_by(my_data, Types) %>%
+  summarise(
+    sample_size = n(),
+    sample_mean = mean(num_tubes, na.rm = TRUE),
+    sample_sd = sd(num_tubes, na.rm = TRUE)
+  )
+
+t.test(Variety_1, Variety_2)
 
