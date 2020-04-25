@@ -91,7 +91,10 @@ res.ftest
 
 
 
+################# Chi-Square Test to Test the significant difference between means ###############
+####  Given values are two types of water to irrigate the gram plants #############
 
+##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 45  #####
 
 M <- as.table(rbind(c(99, 36), c(20, 5)))
 dimnames(M) <- list(Flowe_color = c("White_Flower", "Red_Flower"),
