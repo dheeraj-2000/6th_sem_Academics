@@ -1,3 +1,5 @@
+library(dplyr)
+
 ################# Two sample Z-Test for Test of significant in difference of means ###############
 #### Here Given values are MEAN, SSAMPLE SIZE and STANDARD DEVIATION of Both Samples #############
 
@@ -32,11 +34,14 @@ Z_Calculated
 
 
 ## Given Data is
-Variety_1 <- c(2.2, 2.5, 1.9, 2.6, 2.3, 1.8, 2.0, 2.1, 2.4, 2.3)
-Variety_2 <- c(2.8, 2.5, 2.7, 3.0,3.1, 2.3, 2.4, 3.2, 2.5, 2.9)
+Variety_1 <- c(2.2, 2.5, 1.9, 2.6, 2.6, 2.3, 1.8, 2.0, 2.1, 2.4, 2.3)
+Variety_2 <- c(2.8, 2.5, 2.7, 3.0, 3.1, 2.3, 2.4, 3.2, 2.5, 2.9)
 
 # Create a data frame for the above both variety
 my_data <- data.frame( 
-  group = rep(c("Woman", "Man"), each = 9),
-  weight = c(women_weight,  men_weight)
+  Types=c(rep("Variety_1",11),rep("Variety_2",10)),
+  num_tubes = c(Variety_1,  Variety_2)
 )
+
+my_data
+
