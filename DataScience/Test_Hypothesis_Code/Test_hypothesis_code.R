@@ -65,13 +65,13 @@ t.test(Variety_1, Variety_2)
 
 
 ## Given Data is
-Variety_1 <- c(2.2, 2.5, 1.9, 2.6, 2.6, 2.3, 1.8, 2.0, 2.1, 2.4, 2.3)
-Variety_2 <- c(2.8, 2.5, 2.7, 3.0, 3.1, 2.3, 2.4, 3.2, 2.5, 2.9)
+Tap_water <- c(3.5, 4.2, 2.8, 5.2, 1.7, 2.6, 3.5, 4.2, 5.0, 5.2)
+Saline_water <- c(1.9, 2.6, 2.3, 4.3, 4.0, 4.2, 3.8, 2.9, 3.7)
 
 # Create a data frame for the above both variety
 my_data <- data.frame( 
-  Types=c(rep("Variety_1",11),rep("Variety_2",10)),
-  num_tubes = c(Variety_1,  Variety_2)
+  Types_of_irrigation=c(rep("Tap_water",10),rep("Saline_water",9)),
+  Height_of_Plants = c(Tap_water,  Saline_water)
 )
 
 my_data
