@@ -37,6 +37,8 @@ Z_Calculated
 Variety_1 <- c(2.2, 2.5, 1.9, 2.6, 2.6, 2.3, 1.8, 2.0, 2.1, 2.4, 2.3)
 Variety_2 <- c(2.8, 2.5, 2.7, 3.0, 3.1, 2.3, 2.4, 3.2, 2.5, 2.9)
 
+
+# Consider Null Hypothesis as mean number of tubes of the variety_1 significantly differ from the variety_2
 # Create a data frame for the above both variety
 my_data <- data.frame( 
   Types=c(rep("Variety_1",11),rep("Variety_2",10)),
@@ -54,7 +56,8 @@ summarise(
 
 t.test(Variety_1, Variety_2)
 
-#### So in the output we can see there is difference between the tubes value of both the varieties. S 
+#### So in the output we can see that calculated value (3.8) is greater than Tabulated value (2.09) at 5%LOS, and hence
+#we conclude that the mean number of tubes of the variety_1  significantly not differ from the variety_2 
 
 
 
