@@ -92,7 +92,7 @@ res.ftest
 
 
 ################# Chi-Square Test to Test the significant difference between means ###############
-####  Given values are two types of water to irrigate the gram plants #############
+####  Given values are number of two types plants with two charactor as their leaf colour  #############
 
 ##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 45  #####
 
