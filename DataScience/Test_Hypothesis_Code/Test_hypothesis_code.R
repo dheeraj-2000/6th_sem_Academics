@@ -54,7 +54,7 @@ summarise(
 
 t.test(Variety_1, Variety_2)
 
-#### So in the output we can see thsere is difference between the tubes value of both the varieties 
+#### So in the output we can see there is difference between the tubes value of both the varieties. S 
 
 
 
