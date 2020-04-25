@@ -97,4 +97,6 @@ M <- as.table(rbind(c(99, 36), c(20, 5)))
 dimnames(M) <- list(Flowe_color = c("White_Flower", "Red_Flower"),
                     Shape_of_leaf = c("Flat_leaf","Cirled_leaf"))
 (Xsq <- chisq.test(M))
+Xsq$observed   # observed counts (same as M)
+Xsq$expected   # expected counts under the null
 
