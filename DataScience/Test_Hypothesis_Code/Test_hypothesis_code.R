@@ -94,7 +94,7 @@ res.ftest
 ################# Chi-Square Test to Test the significant difference between means ###############
 ####  Given values are number of two types plants with two charactor as their leaf colour  #############
 
-##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 45  #####
+##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 49  #####
 
 M <- as.table(rbind(c(99, 36), c(20, 5)))
 dimnames(M) <- list(Flowe_color = c("White_Flower", "Red_Flower"),
