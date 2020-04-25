@@ -5,11 +5,11 @@ library (igraph)
 
 # = read_graph ("/home/samroadie/Desktop/sna_project/karate.gml", format = "gml")
 
-G = read_graph("/home/samroadie/Desktop/sna_project/facebook_combined.txt", format = "edgelist", directed = F)
+g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/facebook_combined.txt", format = "edgelist", directed = F)
 #G = read_graph("/home/samroadie/Desktop/sna_project/Friendship-network_data_2013.csv", format = "edgelist", directed = F)
 
 
-V(G)
+V(g)
 #g = G - V(G)[which(degree(G)==0)]
 #V(g)
 #plot(g, layout = layout.kamada.kawai)
@@ -77,7 +77,7 @@ ic <- function(g,s){
 s <- c()
 pow <- c()
 #yahan 1 ki jagah 16 kardena
-for( l in 1:length(buckets)){
+for( l in 16:length(buckets)){
   s <- c(s,l)
   print(l)
   inspow <- c()
@@ -100,12 +100,12 @@ for( l in 1:length(buckets)){
 length(pow)
 #yeh tum lena 
 #jahan tak loop chala us se ek kam n ki value
-sm <-s[1:n]
+sm <-s[1:5]
 df <- cbind(sm, pow)
 df <- as.data.frame(df)
 library(ggplot2)
 ggplot(df,aes(x = sm,y = pow)) + geom_line(color = "red")
 
-write.csv(df, "/home/samroadie/Desktop/sna_project/temp15.csv")
+write.csv(df, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/temp16_20.csv")
   df
 buckets
