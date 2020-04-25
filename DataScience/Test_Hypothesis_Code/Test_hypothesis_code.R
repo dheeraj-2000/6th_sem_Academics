@@ -73,6 +73,8 @@ t.test(Variety_1, Variety_2)
 ##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 45  #####
 
 
+# Consider Null Hypothesis as The variances of the two systems of irrigation are homogeneous.
+
 ## Given Data is
 Tap_water <- c(3.5, 4.2, 2.8, 5.2, 1.7, 2.6, 3.5, 4.2, 5.0, 5.2)
 Saline_water <- c(1.9, 2.6, 2.3, 4.3, 4.0, 4.2, 3.8, 2.9, 3.7)
