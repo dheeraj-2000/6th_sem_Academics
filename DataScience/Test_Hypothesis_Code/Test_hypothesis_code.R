@@ -16,3 +16,8 @@ StandDeviation_2 <- 1.15
 field_2_Sample_MEAN <- 20.3
 
 # calculating the Z-statistic at 5% LOS (i.e, Tabulated value is 1.96)
+
+Z_Calculated <- (field_1_Sample_MEAN - field_2_Sample_MEAN) / 
+  sqrt(StandDeviation_1*StandDeviation_1 / field_1_Sample_Size + StandDeviation_2 / field_2_Sample_MEAN)
+
+Z_Calculated
