@@ -70,18 +70,20 @@ Saline_water <- c(1.9, 2.6, 2.3, 4.3, 4.0, 4.2, 3.8, 2.9, 3.7)
 
 # Create a data frame for the above both variety
 my_data <- data.frame( 
-  Types_of_irrigation=c(rep("Tap_water",10),rep("Saline_water",9)),
-  Height_of_Plants = c(Tap_water,  Saline_water)
+  Types_of_irrigation=c(rep("Saline_water",9),rep("Tap_water",10)),
+  Height_of_Plants = c(Saline_water, Tap_water)
 )
 
 my_data
 
-group_by(my_data, Types) %>%
+group_by(my_data, Types_of_irrigation) %>%
   summarise(
     sample_size = n(),
-    sample_mean = mean(num_tubes, na.rm = TRUE),
-    sample_sd = sd(num_tubes, na.rm = TRUE)
+    sample_mean = mean(Height_of_Plants, na.rm = TRUE),
+    sample_sd = sd(Height_of_Plants, na.rm = TRUE)
   )
 
-t.test(Variety_1, Variety_2)
+res.ftest <- var.test(Tap_water, Saline_water)
+res.ftest
 
+#### So in the output we can see that calculated value(1.78) is less than tabulate value(which is 3.23) So accept the null Hypothesis 
