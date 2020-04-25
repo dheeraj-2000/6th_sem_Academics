@@ -87,3 +87,14 @@ res.ftest <- var.test(Tap_water, Saline_water)
 res.ftest
 
 #### So in the output we can see that calculated value(1.78) is less than tabulate value(which is 3.23) So accept the null Hypothesis 
+
+
+
+
+
+
+M <- as.table(rbind(c(99, 36), c(20, 5)))
+dimnames(M) <- list(Flowe_color = c("White_Flower", "Red_Flower"),
+                    Shape_of_leaf = c("Flat_leaf","Cirled_leaf"))
+(Xsq <- chisq.test(M))
+
