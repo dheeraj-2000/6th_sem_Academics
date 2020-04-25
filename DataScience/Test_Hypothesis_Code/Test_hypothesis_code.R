@@ -1,4 +1,4 @@
-################# Two sample Z-Test or Test of significant for difference of means ###############
+################# Two sample Z-Test for Test of significant in difference of means ###############
 #### Here Given values are MEAN, SSAMPLE SIZE and STANDARD DEVIATION of Both Samples #############
 
 ##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 35#####
@@ -25,7 +25,7 @@ Z_Calculated
 
 
 
-################# Two sample Z-Test or Test of significant for difference of means ###############
-#### Here Given values are MEAN, SSAMPLE SIZE and STANDARD DEVIATION of Both Samples #############
+################# Two sample T-Test for Test of significant in difference of means ###############
+#### Here Given values are Potato Plant yield Tubes fro two different varieties #############
 
 ##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 35#####
