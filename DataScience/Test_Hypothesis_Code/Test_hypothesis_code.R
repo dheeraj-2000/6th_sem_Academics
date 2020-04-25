@@ -104,11 +104,14 @@ res.ftest
 
 
 
+
+
 ################# Chi-Square Test to Test the significant difference between means ###############
 ####  Given values are number of two types plants with two charactor as their leaf colour  #############
 
 ##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 49  #####
 
+## Consider Null hypothesis attributes as flower_colour and Shape_of_leaf are independent of each other
 M <- as.table(rbind(c(99, 36), c(20, 5)))
 dimnames(M) <- list(Flowe_color = c("White_Flower", "Red_Flower"),
                     Shape_of_leaf = c("Flat_leaf","Cirled_leaf"))
@@ -116,6 +119,5 @@ dimnames(M) <- list(Flowe_color = c("White_Flower", "Red_Flower"),
 Xsq$observed   # observed counts (same as M)
 Xsq$expected   # expected counts under the null
 
-## So we can see in the output as Calulated value is (0.20) which ia less than tabulated value (3.84) at 5% LOS. Null hypothesis is
-##accepted and hence we conclude that two characters, flower colour and shape of leaf are
-##independent of each other
+## So we can see the output as Calulated value(0.20) which is less than tabulated value(3.84) at 5% LOS. So Null hypothesis is accepted
+## And hence we conclude that two characters, flower colour and shape of leaf are independent of each other
