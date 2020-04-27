@@ -98,14 +98,19 @@ for( l in 21:length(buckets)){
 }
 #### select karke yahan tak chalana
 length(pow)
+max(pow)
+min(pow)
 #yeh tum lena 
 #jahan tak loop chala us se ek kam n ki value
-sm <-s[1:n]
+sm <-s[1:76]
 df <- cbind(sm, pow)
 df <- as.data.frame(df)
 library(ggplot2)
+df = read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/temp21_96.csv")
 ggplot(df,aes(x = sm,y = pow)) + geom_line(color = "red")
 
-write.csv(df, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/temp16_20.csv")
+df = read.csv("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/temp21_96.csv")
+
+write.csv(df, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/temp21_96.csv")
   df
 buckets
