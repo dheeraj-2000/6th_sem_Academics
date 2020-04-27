@@ -1,12 +1,7 @@
 library(dplyr)
 
-################# Two sample Z-Test for Test of significant in difference between means ###############
-#### Here Given values are MEAN, SSAMPLE SIZE and STANDARD DEVIATION of Both Samples #############
+# Two sample Z-Test for Test of significant in difference between means 
 
-##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 35  #####
-
-
-# There is no significant difference between the means of two paddy fields
 
 # Given DATA for Field No 1
 
@@ -20,25 +15,17 @@ field_2_Sample_Size <- 60
 StandDeviation_2 <- 1.15
 field_2_Sample_MEAN <- 20.3
 
-# calculating the Z-statistic at 5% LOS (i.e, Tabulated value is 1.96)
-
 Z_Calculated <- (field_2_Sample_MEAN - field_1_Sample_MEAN) / 
   sqrt((StandDeviation_1^2/ field_1_Sample_Size) + (StandDeviation_2^2 / field_2_Sample_Size))
 
 Z_Calculated
-## SINCE we got calculated value as 8.57 which is greater than tabulated value(1.96) So reject Null Hypothesis that means both the fields have significant difference
 
 
 
 
 
-################# Two sample T-Test for Test of significant in difference between means ###############
-#### Here Given values are Potato Plant yield Tubes fro two different varieties #############
+################# Two sample T-Test for Test of significant in difference between means 
 
-##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 41  #####
-
-
-# Consider Null Hypothesis as mean number of tubes of the variety_1 significantly differ from the variety_2
 
 ## Given Data is
 Variety_1 <- c(2.2, 2.5, 1.9, 2.6, 2.6, 2.3, 1.8, 2.0, 2.1, 2.4, 2.3)
