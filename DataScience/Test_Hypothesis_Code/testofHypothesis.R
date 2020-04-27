@@ -49,20 +49,12 @@ group_by(my_data, Types) %>%
 
 t.test(Variety_1, Variety_2)
 
-#### So in the output we can see that calculated value (3.8) is greater than Tabulated value (2.09) at 5%LOS, and hence
-#we conclude that the mean number of tubes of the variety_1  significantly not differ from the variety_2 
 
 
 
 
+################# Two sample F-Test for Test of significant in difference between means 
 
-################# Two sample F-Test for Test of significant in difference between means ###############
-####  Given values are two types of water to irrigate the gram plants #############
-
-##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 45  #####
-
-
-# Consider Null Hypothesis as The variances of the two systems of irrigation are homogeneous.
 
 ## Given Data is
 Tap_water <- c(3.5, 4.2, 2.8, 5.2, 1.7, 2.6, 3.5, 4.2, 5.0, 5.2)
@@ -86,19 +78,11 @@ group_by(my_data, Types_of_irrigation) %>%
 res.ftest <- var.test(Tap_water, Saline_water)
 res.ftest
 
-## So in the output we can see that calculated value(1.78) is less than tabulate value(which is 3.23) So accept the null Hypothesis 
-##hence we conclude that the variances of the two systems of irrigation are homogeneous
 
 
 
+################# Chi-Square Test to Test the significant difference between means
 
-
-################# Chi-Square Test to Test the significant difference between means ###############
-####  Given values are number of two types plants with two charactor as their leaf colour  #############
-
-##### Considering the Examples given in DR. ATHE's TESTING OF HYPOTHESIS Pg.No. 49  #####
-
-## Consider Null hypothesis attributes as flower_colour and Shape_of_leaf are independent of each other
 M <- as.table(rbind(c(99, 36), c(20, 5)))
 dimnames(M) <- list(Flowe_color = c("White_Flower", "Red_Flower"),
                     Shape_of_leaf = c("Flat_leaf","Cirled_leaf"))
@@ -106,5 +90,4 @@ dimnames(M) <- list(Flowe_color = c("White_Flower", "Red_Flower"),
 Xsq$observed   # observed counts (same as M)
 Xsq$expected   # expected counts under the null
 
-## So we can see the output as Calulated value(0.20) which is less than tabulated value(3.84) at 5% LOS. So Null hypothesis is accepted
-## And hence we conclude that two characters, flower colour and shape of leaf are independent of each other
+
