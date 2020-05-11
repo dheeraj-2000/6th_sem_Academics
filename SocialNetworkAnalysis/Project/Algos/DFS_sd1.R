@@ -1,15 +1,15 @@
 # IMPORTING DATASETS
 library (igraph)
-g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/facebook_combined.txt", format = "edgelist", directed = F)
+#g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/facebook_combined.txt", format = "edgelist", directed = F)
 
-#dat <- read.table("/home/samroadie/Desktop/sna_project/dataset/fb-pages-food.edges", skip=1, sep=",")
+#dat <- read.table("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/fb-pages-food.edges", skip=1, sep=",")
 #g <- graph_from_data_frame(dat)
 
-#g <- read_graph("/home/samroadie/Desktop/sna_project/karate.gml",format = "gml")
+#g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/karate.gml",format = "gml")
 
-#g <- read_graph("/home/samroadie/Desktop/sna_project/dataset/weblog.txt", format = "edgelist", directed = F)
+g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/weblog.txt", format = "edgelist", directed = F)
 
-#g <- read_graph("/home/samroadie/Desktop/sna_project/dataset/road.txt", format = "edgelist", directed = F)
+#g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/road.txt", format = "edgelist", directed = F)
 
 ############################################################################################################
 ####Preprocessing
@@ -146,7 +146,7 @@ for (i in buckets[[1]]){
 shedf2<- cbind(init_node,num_step)
 shedf2
 shedf2 <- as.data.frame(shedf2)
-write.csv(shedf2, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/fb_dfs_sd1_shell_Based.csv")
+write.csv(shedf2, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/re_generated_data/weblog/weblog_dfs_sd1_shell_Based.csv")
 
 
 ##############################################################################################Degree based
@@ -239,6 +239,7 @@ for (i in buckets[[1]]){
   
 }
 degshe <- cbind(init_node,num_step)
+
 degshe <- as.data.frame(degshe)
-write.csv(degshe, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/fb_dfs_sd1_degree_Based.csv")
+write.csv(degshe, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/re_generated_data/weblog/weblog_dfs_sd1_degree_Based.csv")
 ##############################################################################################################

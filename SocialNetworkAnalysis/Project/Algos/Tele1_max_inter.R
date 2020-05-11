@@ -1,16 +1,16 @@
 
 # IMPORTING DATASETS
+library (igraph)
+#g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/facebook_combined.txt", format = "edgelist", directed = F)
 
-g = read_graph("/home/samroadie/Desktop/sna_project/facebook_combined.txt", format = "edgelist", directed = F)
+#dat <- read.table("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/fb-pages-food.edges", skip=1, sep=",")
+#g <- graph_from_data_frame(dat)
 
-dat <- read.table("/home/samroadie/Desktop/sna_project/dataset/fb-pages-food.edges", skip=1, sep=",")
-g <- graph_from_data_frame(dat)
+#g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/karate.gml",format = "gml")
 
-g <- read_graph("/home/samroadie/Desktop/sna_project/karate.gml",format = "gml")
+g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/weblog.txt", format = "edgelist", directed = F)
 
-g <- read_graph("/home/samroadie/Desktop/sna_project/dataset/weblog.txt", format = "edgelist", directed = F)
-
-g <- read_graph("/home/samroadie/Desktop/sna_project/dataset/road.txt", format = "edgelist", directed = F)
+#g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/road.txt", format = "edgelist", directed = F)
 
 ############################################################################################################
 ####Preprocessing
@@ -112,6 +112,8 @@ for (i in buckets[[1]]){
   num_step<-c(num_step,numsteps)
 }
 shell_based <- cbind(init_node,num_step)
+shell_based <- as.data.frame(shell_based)
+write.csv(shell_based, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/re_gen/weblog/weblog_tele1_max_inter_shell_Based.csv")
 ####################################################################################################Degree based
 num_step <- c()
 init_node<- c()
@@ -175,6 +177,7 @@ for (i in buckets[[1]]){
 }
 degree_shell <- cbind(init_node,numsteps)
 
-
+degree_shell <- as.data.frame(degree_shell)
+write.csv(degree_shell, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/re_gen/weblog/weblog_tele1_max_inter_degree_Based.csv")
 
 
