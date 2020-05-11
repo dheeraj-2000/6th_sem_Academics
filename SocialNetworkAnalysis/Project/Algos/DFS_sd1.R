@@ -144,6 +144,7 @@ for (i in buckets[[1]]){
 }
 
 shedf2<- cbind(init_node,num_step)
+shedf2
 shedf2 <- as.data.frame(shedf2)
 write.csv(shedf2, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/fb_dfs_sd1_shell_Based.csv")
 
@@ -238,4 +239,6 @@ for (i in buckets[[1]]){
   
 }
 degshe <- cbind(init_node,num_step)
+degshe <- as.data.frame(degshe)
+write.csv(degshe, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/fb_dfs_sd1_degree_Based.csv")
 ##############################################################################################################
