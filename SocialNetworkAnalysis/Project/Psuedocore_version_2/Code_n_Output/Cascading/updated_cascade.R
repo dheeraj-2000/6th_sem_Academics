@@ -77,7 +77,7 @@ ic <- function(g,s){
 s <- c()
 pow <- c()
 
-for( l in length(buckets)){
+for( l in 1:length(buckets)){
   s <- c(s,l)
   print(l)
   inspow <- c()
@@ -93,7 +93,7 @@ for( l in length(buckets)){
   print(inspow)
   print("ok4")
   }
-  pow <- c(pow ,mean(inspow))
+  pow <- c(pow ,sd(inspow))
   #std <- c(std ,std(inspow))
   print(pow)
 }
