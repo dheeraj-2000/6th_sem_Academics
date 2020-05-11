@@ -36,7 +36,7 @@ y2 <- c(0.07471264368,
         0.9942528736,
         1
 )
-plot(degree_,y1,type="l",col="red", xlim=c(.9, 9), ylim = c(0.5, 1.01),  xlab="Number of steps taken",ylab="Cumulative fraction of instances", main = "Comparison of algorithm for weblog using teleportation") + 
+plot(degree_,y1,type="l",col="red", xlim=c(.9, 9), ylim = c(0.5, 1.01),  xlab="Number of steps taken",ylab="Cumulative fraction of instances", main = "Comparison of algorithm for weblog using dfs") + 
   lines(shel,y2,col="blue")
 legend("bottomright", legend=c("Degree based", "Shell Based"),lty=1:1, cex=0.8 ,
        col=c("red", "blue"))
