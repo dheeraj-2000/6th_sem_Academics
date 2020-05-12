@@ -77,7 +77,7 @@ ic <- function(g,s){
 s <- c()
 pow <- c()
 
-for( l in 1:length(buckets)){
+for( l in 19:length(buckets)){
   s <- c(s,l)
   print(l)
   inspow <- c()
@@ -105,6 +105,6 @@ df
 library(ggplot2)
 ggplot(df,aes(x = sm,y = pow)) + geom_line(color = "red")
 df
-write.csv(df, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Psuedocore_version_2/Code_n_Output/Cascading/temp.csv")
+write.csv(df, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Psuedocore_version_2/Code_n_Output/Cascading/temp_new.csv")
 ggplot(df,aes(x = sm,y = pow)) + geom_line(color = "red")
 
