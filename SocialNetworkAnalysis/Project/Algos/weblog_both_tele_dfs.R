@@ -67,7 +67,7 @@ y2tele <- c(0.07471264368,
             0.9942528736,
             1
 )
-plot(degree_,y1,type="l",col="red", xlim=c(.9, 12), ylim = c(-0.15, 1.01),  xlab="Number of steps taken",ylab="Cumulative fraction of instances", main = "Comparison of algorithms for weblog") + 
+plot(degree_,y1,type="l",col="red", xlim=c(.9, 12), ylim = c(-0.15, 1.01),  xlab="Number of steps taken",ylab="Cumulative fraction of instances", main = "Comparison of algorithm for weblog") + 
   lines(shel,y2,col="blue") + lines(degree_tele,y1tele,col="green") + lines(sheltele,y2tele,col="purple")
 legend("bottomright", legend=c("Degree based dfs", "Shell Based dfs", "Degree based teleport", "Shell Based teleport"),lty=1:1, cex=0.8 ,
        col=c("red", "blue", "green", "purple"))
