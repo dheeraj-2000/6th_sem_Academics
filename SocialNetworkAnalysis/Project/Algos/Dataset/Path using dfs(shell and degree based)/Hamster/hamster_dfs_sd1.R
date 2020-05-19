@@ -109,7 +109,7 @@ y2 <- c(0.01234567901,
         0.3888888889,
         0.3950617284
 )
-plot(degree_,y1,type="l",col="red", xlim=c(.9, 9), ylim = c(0.0, 1.01),  xlab="Number of steps taken",ylab="Cumulative fraction of instances", main = "Comparison of algorithm for Hamster using dfs") + 
+plot(degree_,y1,type="l",col="red", xlim=c(2, 68), ylim = c(0.0, 1.01),  xlab="Number of steps taken",ylab="Cumulative fraction of instances", main = "Comparison of algorithm for Hamster using dfs") + 
   lines(shel,y2,col="blue")
 legend("bottomright", legend=c("Degree based", "Shell Based"),lty=1:1, cex=0.8 ,
        col=c("red", "blue"))
