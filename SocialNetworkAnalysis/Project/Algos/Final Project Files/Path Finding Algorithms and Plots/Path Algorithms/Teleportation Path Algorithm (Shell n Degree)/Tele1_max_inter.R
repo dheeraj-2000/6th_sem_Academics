@@ -8,7 +8,7 @@ library (igraph)
 
 #g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/karate.gml",format = "gml")
 
-g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/weblog.txt", format = "edgelist", directed = F)
+g <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/email.txt", format = "edgelist", directed = F)
 
 #g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/road.txt", format = "edgelist", directed = F)
 
@@ -113,7 +113,7 @@ for (i in buckets[[1]]){
 }
 shell_based <- cbind(init_node,num_step)
 shell_based <- as.data.frame(shell_based)
-write.csv(shell_based, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/re_gen/weblog/weblog_tele1_max_inter_shell_Based.csv")
+write.csv(shell_based, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/email_tele1_max_inter_shell_Based.csv")
 ####################################################################################################Degree based
 num_step <- c()
 init_node<- c()
@@ -178,6 +178,6 @@ for (i in buckets[[1]]){
 degree_shell <- cbind(init_node,numsteps)
 
 degree_shell <- as.data.frame(degree_shell)
-write.csv(degree_shell, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/re_gen/weblog/weblog_tele1_max_inter_degree_Based.csv")
+write.csv(degree_shell, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/email_tele1_max_inter_degree_Based.csv")
 
 

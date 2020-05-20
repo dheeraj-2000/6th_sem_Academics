@@ -7,7 +7,7 @@ library (igraph)
 
 #g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/karate.gml",format = "gml")
 
-g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/weblog.txt", format = "edgelist", directed = F)
+g <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/email.txt", format = "edgelist", directed = F)
 
 #g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/road.txt", format = "edgelist", directed = F)
 
@@ -146,7 +146,7 @@ for (i in buckets[[1]]){
 shedf2<- cbind(init_node,num_step)
 shedf2
 shedf2 <- as.data.frame(shedf2)
-write.csv(shedf2, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/re_generated_data/weblog/weblog1_dfs_sd1_shell_Based.csv")
+write.csv(shedf2, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/email_dfs_sd1_shell_Based.csv")
 
 
 ##############################################################################################Degree based
@@ -241,5 +241,5 @@ for (i in buckets[[1]]){
 degshe <- cbind(init_node,num_step)
 
 degshe <- as.data.frame(degshe)
-write.csv(degshe, "/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/re_generated_data/weblog/weblog1_dfs_sd1_degree_Based.csv")
+write.csv(degshe, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/email_dfs_sd1_degree_Based.csv")
 ##############################################################################################################
