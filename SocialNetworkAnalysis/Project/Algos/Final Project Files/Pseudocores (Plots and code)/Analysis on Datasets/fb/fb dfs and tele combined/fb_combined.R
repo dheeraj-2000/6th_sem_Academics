@@ -22,10 +22,16 @@ y <- c(0.4666666667,
        1)
 
 
-degree_ <- c(7,37
+degree_ <- c(1,
+             2,
+             3,
+             4
 )
 y1 <- c(
-  1,1
+  0.4666666667,
+  0.8266666667,
+  0.96,
+  1
 )
 
 shel <- c(1,
@@ -56,8 +62,8 @@ y2 <- c(0.4666666667,
         1
 )
 
-plot(x_,y_,type="l",col="red", xlim=c(0, 98), ylim = c(0.4, 1.2),  xlab="Number of steps taken",ylab="Cumulative fraction of instances", main = "Comparison of algorithms for Facebook (Pseudocore) ") + 
-  lines(x,y,col="blue")+ lines(degree_,y1,col="green") + lines(shel,y2,col="purple")
+plot(x_,y_,type="o",pch = 20,col="red", xlim=c(1, 98), ylim = c(0.4, 1.01),  xlab="Number of steps taken",ylab="Cumulative fraction of instances", main = "Comparison of algorithms for Facebook to reach Pseudo-core ") + 
+  lines(x,y,type="o",pch = 20,col="blue")+ lines(degree_,y1,type="o",pch = 20,col="green") + lines(shel,y2,type="o",pch = 20,col="purple")
 legend("bottomright", legend=c("Degree based dfs", "Shell Based dfs", "Degree based teleport", "Shell Based teleport"),lty=1:1, cex=0.8 ,
        col=c("red", "blue", "green", "purple"))
 

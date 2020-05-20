@@ -164,8 +164,8 @@ y2 <- c(0.09333333333,
         1
 )
 
-plot(x_,y_,type="o",pch = 20,pch = 20,col="red", xlim=c(0, 300), ylim = c(0, 1.01),  xlab="Number of steps taken",ylab="Cumulative fraction of instances", main = "Comparison of algorithms for Facebook to reach core") + 
-  lines(x,y,type="o",pch = 20,col="blue")+ geom_point() + lines(degree_,y1,type="o",pch = 20,col="green") + lines(shel,y2,type="o",pch = 20,col="purple")
+plot(x_,y_,type="o",pch = 20,col="red", xlim=c(0, 300), ylim = c(0, 1.01),  xlab="Number of steps taken",ylab="Cumulative fraction of instances", main = "Comparison of algorithms for Facebook to reach core") + 
+  lines(x,y,type="o",pch = 20,col="blue") + lines(degree_,y1,type="o",pch = 20,col="green") + lines(shel,y2,type="o",pch = 20,col="purple")
 legend("bottomright", legend=c("Degree based dfs", "Shell Based dfs", "Degree based teleport", "Shell Based teleport"),lty=1:1, cex=0.8 ,
-       col=c("red", "blue", "green", "purple")) +geom_point()
+       col=c("red", "blue", "green", "purple")) 
 
