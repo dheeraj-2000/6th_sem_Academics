@@ -52,7 +52,7 @@ sampleWithoutSurprises <- function(x) {
 ##############################################################
 # give psuedo core from cascading power
 V(g)$core = coreness(g)
-max_iter = V(g)$core[buckets[[25]]]
+max_iter = V(g)$core[buckets[[6]]]
 max_iter
 num_step <- c()
 init_node<- c()
