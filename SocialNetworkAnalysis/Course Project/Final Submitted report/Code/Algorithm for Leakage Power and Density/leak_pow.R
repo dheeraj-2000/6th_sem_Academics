@@ -1,6 +1,7 @@
 # IMPORTING DATASETS
-
+library (igraph)
 #g = read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/facebook_combined.txt", format = "edgelist", directed = F)
+g = read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Facebook friendship Network/facebook_combined.txt", format = "edgelist", directed = F)
 
 
 #g <- read_graph("/home/dheeraj/Desktop/Lecture/6th_sem_Academics/SocialNetworkAnalysis/Project/Algos/Dataset/weblog.txt", format = "edgelist", directed = F)
@@ -93,6 +94,7 @@ edgecount
 
 ######################################################### plotting
 df <- cbind(shellno,nodecount,density,leakage_power)
+df <- cbind(shellno, leakage_power)
 df
 df = as.data.frame(df)
 df
