@@ -1,8 +1,8 @@
 library (igraph)
 library(ggplot2)
 library(devtools)
-g = read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Facebook friendship Network/facebook_combined.txt", format = "edgelist", directed = F)
-#g <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Weblog Network/weblog.txt", format = "edgelist", directed = F)
+#g = read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Facebook friendship Network/facebook_combined.txt", format = "edgelist", directed = F)
+g <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Weblog Network/weblog.txt", format = "edgelist", directed = F)
 
 g = g - V(g)[which(degree(g)==0)]
 g
