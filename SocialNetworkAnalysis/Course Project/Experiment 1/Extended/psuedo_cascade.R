@@ -5,8 +5,8 @@ library (igraph)
 
 
 
-#G = read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Facebook friendship Network/facebook_combined.txt", format = "edgelist", directed = F)
-G <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Weblog Network/weblog.txt", format = "edgelist", directed = F)
+G = read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Facebook friendship Network/facebook_combined.txt", format = "edgelist", directed = F)
+#G <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Weblog Network/weblog.txt", format = "edgelist", directed = F)
 
 g = G - V(G)[which(degree(G)==0)]
 V(g)
@@ -75,7 +75,7 @@ ic <- function(g,s){
 #s <- c()
 inspow <- c()
 node <- c()
-  for (m in buckets[[10]]){
+  for (m in buckets[[43]]){
     print(m)
     node <- c(node,m)
     seed <- m
@@ -98,6 +98,6 @@ boxplot(df$inspow)
 library(ggplot2)
 ggplot(df,aes(x = sm,y = pow)) + geom_line(color = "red")
 df
-write.csv(df, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/weblog/shell_10.csv")
+write.csv(df, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/Facebook/shell_43.csv")
 #df <- read.csv("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/temp15.csv")
 
