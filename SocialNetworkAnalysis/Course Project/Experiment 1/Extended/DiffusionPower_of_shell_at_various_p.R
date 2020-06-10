@@ -1,10 +1,10 @@
 library(igraph)
 library(ggplot2)
 
-df <- read.csv("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/Facebook/shell48/shell_48_nodes_pow.csv")
+df <- read.csv("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/Facebook/shell43/shell_43_nodes_pow.csv")
 df
 
-node <- df$node
+node <- df$x
 
 y_.1 <- df$at_point_10
 y_.25 <- df$at_point_25
@@ -16,14 +16,25 @@ min(y_.1)
 max(node)
 max(y_.80)
 
+
+lablist<-lablist<-as.vector(c(1:126))
+lablist
 #f781bf pink
 #a65628 brown
 #ff7f00 orange
 #984ea3 purple
-#4daf4a green
+#4daf4a green 
 #377eb8 blue
-plot(node, y_.1, type="o", pch = 20, col="#f781bf", xlim=c(1713, 2407), ylim = c(2000, 4055),  xlab="Nodes in shell no. 48",ylab="Diffusion Capacity",
-     main = "Diffusion capacity of each Nodes in shell 48 (considered as \n Pseudocore) of Facebook friendship network ")
+plot(node, y_.1, type="o", pch = 20, col="#f781bf", xlim=c(0, 85), ylim = c(1940, 4150), xlab="Nodes in shell no. 37",ylab="Diffusion Capacity",
+     main = "Diffusion capacity of each 126 Nodes in shell 37 (considered as \n Pseudocore) of Facebook friendship network ")
+  #ticks = temp
+  #ticks
+  #box()
+  #axis(side = 1, at = ticks, labels=ticks, cex.axis=1.05)
+  #text(srt = 45, xpd=TRUE)
+  #axis(1, at=seq(1, 126, by=1))
+  #text(seq(1, 126, by=1), par("usr")[3] - 0.2, labels= lablist, srt = 45, pos = 1, xpd = TRUE)
+  #axis(side = 2)
   lines(node, y_.25, type="o",pch = 20, col="#a65628") + 
   lines(node, y_.40, type="o",pch = 20, col="green") + 
   lines(node, y_.50, type="o",pch = 20, col="red")
