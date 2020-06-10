@@ -5,8 +5,8 @@ library (igraph)
 
 
 
-G = read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Facebook friendship Network/facebook_combined.txt", format = "edgelist", directed = F)
-#G <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Weblog Network/weblog.txt", format = "edgelist", directed = F)
+#G = read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Facebook friendship Network/facebook_combined.txt", format = "edgelist", directed = F)
+G <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Weblog Network/weblog.txt", format = "edgelist", directed = F)
 
 g = G - V(G)[which(degree(G)==0)]
 V(g)
@@ -56,7 +56,7 @@ ic <- function(g,s){
     for(i in jst_inf){
       for (j in neighbors(g,i)) {
         r= runif(1)
-        if (r<0.4 && (!j %in% infected) && (!j %in% temp)){
+        if (r<0.80 && (!j %in% infected) && (!j %in% temp)){
           
           temp <- c(temp,j)
         }
@@ -75,7 +75,7 @@ ic <- function(g,s){
 #s <- c()
 inspow <- c()
 node <- c()
-  for (m in buckets[[48]]){
+  for (m in buckets[[10]]){
     print(m)
     node <- c(node,m)
     seed <- m
@@ -95,9 +95,9 @@ node <- c()
 df <- cbind(node, inspow)
 df <- as.data.frame(df)
 #boxplot(df$inspow)
-library(ggplot2)
-ggplot(df,aes(x = sm,y = pow)) + geom_line(color = "red")
+#library(ggplot2)
+#ggplot(df,aes(x = sm,y = pow)) + geom_line(color = "red")
 df
-write.csv(df, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/Facebook/shell48/shell_48_p_less4.csv")
+write.csv(df, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/weblog/shell10/web_shell_10_p_less80.csv")
 #df <- read.csv("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/temp15.csv")
 
