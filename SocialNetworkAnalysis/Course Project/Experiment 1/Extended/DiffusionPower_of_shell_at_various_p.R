@@ -19,7 +19,7 @@ y_.80 <- df$at_point_80
 #984ea3 purple
 #4daf4a green
 #377eb8 blue
-plot(node, y_.1, type="o", pch = 20, col="#f781bf", xlim=c(896, 3440), ylim = c(2500, 4050),  xlab="Nodes in shell no. 37",ylab="Diffusion Capacity",
+plot(node, y_.1, type="o", pch = 20, col="#f781bf", xlim=c(896, 3440), ylim = c(1950, 4100),  xlab="Nodes in shell no. 37",ylab="Diffusion Capacity",
      main = "Diffusion capacity of each Nodes in shell 37 (considered as \n Pseudocore) of Facebook friendship network ")
   lines(node, y_.25, type="o",pch = 20, col="#a65628") + 
   lines(node, y_.40, type="o",pch = 20, col="green") + 
