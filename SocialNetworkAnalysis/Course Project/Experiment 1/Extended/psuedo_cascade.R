@@ -56,7 +56,7 @@ ic <- function(g,s){
     for(i in jst_inf){
       for (j in neighbors(g,i)) {
         r= runif(1)
-        if (r<0.5 && (!j %in% infected) && (!j %in% temp)){
+        if (r<0.4 && (!j %in% infected) && (!j %in% temp)){
           
           temp <- c(temp,j)
         }
@@ -94,10 +94,10 @@ node <- c()
 
 df <- cbind(node, inspow)
 df <- as.data.frame(df)
-boxplot(df$inspow)
+#boxplot(df$inspow)
 library(ggplot2)
 ggplot(df,aes(x = sm,y = pow)) + geom_line(color = "red")
 df
-write.csv(df, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/Facebook/shell_48.csv")
+write.csv(df, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/Facebook/shell48/shell_48_p_less4.csv")
 #df <- read.csv("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/temp15.csv")
 
