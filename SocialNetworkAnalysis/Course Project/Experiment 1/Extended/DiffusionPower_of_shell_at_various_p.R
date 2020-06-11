@@ -1,7 +1,7 @@
 library(igraph)
 library(ggplot2)
 
-df <- read.csv("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/Facebook/shell43/shell_43_nodes_pow.csv")
+df <- read.csv("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/weblog/shell10/shell_10_nodes_pow.csv")
 df
 
 node <- df$x
@@ -25,8 +25,8 @@ lablist
 #984ea3 purple
 #4daf4a green 
 #377eb8 blue
-plot(node, y_.1, type="o", pch = 20, col="#f781bf", xlim=c(0, 85), ylim = c(1940, 4150), xlab="Nodes in shell no. 37",ylab="Diffusion Capacity",
-     main = "Diffusion capacity of each 126 Nodes in shell 37 (considered as \n Pseudocore) of Facebook friendship network ")
+plot(node, y_.1, type="o", pch = 20, col="#f781bf", xlim=c(1, 7), ylim = c(-250, 621), xlab="Nodes in shell no. 10", ylab="Diffusion Capacity",
+     main = "Diffusion capacity of each 7 Nodes in shell 10 \n(considered as Pseudocore) of Weblog network \n [for given p values, min=1, max=611]")
   #ticks = temp
   #ticks
   #box()
