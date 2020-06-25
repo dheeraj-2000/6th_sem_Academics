@@ -1,7 +1,7 @@
 library(igraph)
 library(ggplot2)
 
-df <- read.csv("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/Extended/weblog/shell10/shell_10_nodes_pow.csv")
+df <- read.csv("/home/dheeraj/my_projects/my_project_env/practice/Pseudocores-Analysis/Experiment 1/Extended/email/shell8/email_shell_8_nodes_pow.csv")
 df
 
 node <- df$x
@@ -25,8 +25,8 @@ lablist
 #984ea3 purple
 #4daf4a green 
 #377eb8 blue
-plot(node, y_.1, type="o", pch = 20, col="#f781bf", xlim=c(1, 7), ylim = c(-250, 621), xlab="Nodes in shell no. 10", ylab="Diffusion Capacity",
-     main = "Diffusion capacity of each 7 Nodes in shell 10 \n(considered as Pseudocore) of Weblog network \n [for given p values, min=1, max=611]")
+plot(node, y_.1, type="o", pch = 20, col="#f781bf", xlim=c(1, 111), ylim = c(1, 1560), xlab="Nodes in shell no. 8", ylab="Diffusion Capacity",
+     main = "Diffusion capacity of each 111 Nodes in shell 8 (considered as \nPseudocore shell) of Email-University network \n [for given p values, min=1, max=1108]")
   #ticks = temp
   #ticks
   #box()
@@ -39,7 +39,7 @@ plot(node, y_.1, type="o", pch = 20, col="#f781bf", xlim=c(1, 7), ylim = c(-250,
   lines(node, y_.40, type="o",pch = 20, col="green") + 
   lines(node, y_.50, type="o",pch = 20, col="red")
   lines(node, y_.80, type="o",pch = 20, col="#377eb8")
-legend("bottomright", legend=c("at p = 0.80", "at p = 0.50", "at p = 0.40", "at p = 0.25", "at p = 0.10"),lty=1:1, cex=0.8,lwd =1.8,
+legend("topright", legend=c("at p = 0.80", "at p = 0.50", "at p = 0.40", "at p = 0.25", "at p = 0.10"),lty=1:1, cex=0.8,lwd =1.8,
        col=c("#377eb8", "red", "green", "#a65628", "#f781bf"))
 
 

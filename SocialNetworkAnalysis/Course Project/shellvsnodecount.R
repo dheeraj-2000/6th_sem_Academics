@@ -1,8 +1,10 @@
 library (igraph)
 library(ggplot2)
 library(devtools)
-g = read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Facebook friendship Network/facebook_combined.txt", format = "edgelist", directed = F)
+#g = read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Facebook friendship Network/facebook_combined.txt", format = "edgelist", directed = F)
 #g <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Final Submitted report/Code/Datasets Used/Weblog Network/weblog.txt", format = "edgelist", directed = F)
+#g <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/Pseudocores-Analysis/Previous Analysis Code/Datasets Used/Email-University Network/email.txt", format = "edgelist", directed = F)
+g <- read_graph("/home/dheeraj/my_projects/my_project_env/practice/Pseudocores-Analysis/Previous Analysis Code/Datasets Used/Animal Interaction/animal_interaction.txt", format = "edgelist", directed = F)
 
 g = g - V(g)[which(degree(g)==0)]
 g
@@ -46,5 +48,5 @@ df1
 barplot(x=shell, y=NodeCount)
 ggplot(df1,mainTitle="Weight histo.", aes(Shell_number, Number_of_nodes)) +
   geom_col(color = "red", fill = "lightgreen") 
-write.csv(df, "/home/dheeraj/my_projects/my_project_env/practice/6th_sem_Academics/SocialNetworkAnalysis/Course Project/Experiment 1/ Weblog/shellvsNodeCinWeblog.csv")
+write.csv(df, "/home/dheeraj/my_projects/my_project_env/practice/Pseudocores-Analysis/Experiment 1/Animal_interaction/shellvsNodeCinAnimal.csv")
 
